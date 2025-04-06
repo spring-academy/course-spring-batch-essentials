@@ -1,0 +1,10 @@
+{
+  "id": "spring-batch-essentials-steps",
+  "slug": "spring-batch-steps",
+  "title": "Structure your Job with Steps",
+  "status": "live",
+  "duration": 3600,
+  "settings": {
+    "manualCompletion": true
+  }
+}

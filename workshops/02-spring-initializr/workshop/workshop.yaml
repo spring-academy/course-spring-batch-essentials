@@ -1,0 +1,7 @@
+name: Spring Initializr
+modules:
+  activate:
+    - 01-create-project
+    - 02-prepare-project
+    - 03-run-project
+    - 04-summary

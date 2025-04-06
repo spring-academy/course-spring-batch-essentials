@@ -1,0 +1,9 @@
+name: Skipping invalid records
+modules:
+  activate:
+    - 01-overview
+    - 02-listener
+    - 03-bean
+    - 04-policy
+    - 05-run
+    - 99-summary

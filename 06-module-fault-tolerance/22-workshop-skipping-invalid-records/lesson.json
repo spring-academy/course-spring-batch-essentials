@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-fault-tolerance-skipping-invalid-records-lab",
+  "slug": "spring-batch-fault-tolerance-skipping-invalid-records-lab",
+  "title": "Lab: Skipping invalid records",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "educates": "spr-batch-fault-tolerance-skipping"
+  }
+}

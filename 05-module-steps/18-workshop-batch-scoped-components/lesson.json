@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-steps-batch-scoped-lab",
+  "slug": "spring-batch-batch-scoped-components-lab",
+  "title": "Lab: Batch Scoped Components",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "educates": "spr-batch-scoped-components"
+  }
+}

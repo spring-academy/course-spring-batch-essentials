@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-initializr-workshop",
+  "slug": "spring-batch-initializr-workshop",
+  "title": "Lab: Bootstrap the project",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "educates": "spr-batch-initializr-workshop",
+    "manualCompletion": true
+  }
+}

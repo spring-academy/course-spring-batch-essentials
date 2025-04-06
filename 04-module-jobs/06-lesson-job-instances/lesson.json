@@ -1,0 +1,11 @@
+{
+  "id": "spring-batch-essentials-jobs-understanding-job-instances",
+  "slug": "spring-batch-understanding-job-instances",
+  "title": "Understanding Job Instances",
+  "status": "live",
+  "type": "article",
+  "duration": 480,
+  "settings": {
+    "manualCompletion": true
+  }
+}

@@ -1,0 +1,1 @@
+In this lesson, you learned about some of the trade offs between various test-database choices, and the test utilities provided by Spring Batch. In the upcoming Lab, we'll update our current test of `BillingJob` to use those utilities.

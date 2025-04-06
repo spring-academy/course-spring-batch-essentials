@@ -1,0 +1,8 @@
+name: Using Job parameters to create Job Instances
+modules:
+  activate:
+    - 01-using-job-parameters
+    - 02-learning-moment
+    - 03-launching-second-job-instance
+    - 04-updating-the-test
+    - 05-summary

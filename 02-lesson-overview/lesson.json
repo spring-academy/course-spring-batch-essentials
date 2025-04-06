@@ -1,0 +1,21 @@
+{
+  "id": "spring-batch-essentials-overview",
+  "slug": "overview",
+  "title": "Spring Batch Overview",
+  "status": "live",
+  "type": "article",
+  "duration": 420,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Spring Batch domain model",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/domain.html#domainLanguageOfBatch"
+      },
+      {
+        "text": "Spring Batch Meta-Data Schema",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/schema-appendix.html#metaDataSchema"
+      }
+    ]
+  }
+}

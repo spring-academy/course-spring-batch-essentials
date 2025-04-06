@@ -1,0 +1,1 @@
+The **Building a Batch Application with Spring Batch** course is for Java developers who want to learn Spring Batch. This course is designed to help you build a solid introduction to Spring Batch and show you how to use it with Spring Boot by building a real world application.

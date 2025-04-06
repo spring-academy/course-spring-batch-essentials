@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-steps-processing-data-lab",
+  "slug": "spring-batch-steps-processing-data-lab",
+  "title": "Lab: Processing Data",
+  "status": "live",
+  "type": "lab",
+  "duration": 900,
+  "settings": {
+    "manualCompletion": true,
+    "educates": "spr-batch-processing-data"
+  }
+}

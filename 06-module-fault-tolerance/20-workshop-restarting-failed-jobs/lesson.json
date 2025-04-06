@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-fault-tolerance-restarting-failed-jobs-lab",
+  "slug": "spring-batch-essentials-fault-tolerance-restarting-failed-jobs-lab",
+  "title": "Lab: Restarting failed jobs",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "educates": "spr-batch-fault-tolerance-restarting-failed-jobs"
+  }
+}

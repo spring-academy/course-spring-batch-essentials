@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-steps-reading-writing-data-lab",
+  "slug": "spring-batch-steps-reading-writing-data-lab",
+  "title": "Lab: Reading and Writing Data",
+  "status": "live",
+  "type": "lab",
+  "duration": 900,
+  "settings": {
+    "manualCompletion": true,
+    "educates": "spr-batch-reading-writing-data"
+  }
+}

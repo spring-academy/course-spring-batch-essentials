@@ -1,0 +1,21 @@
+{
+  "id": "spring-batch-essentials-steps-understanding-steps-part-2",
+  "slug": "spring-batch-steps-using-steps",
+  "title": "Using Steps",
+  "status": "live",
+  "type": "article",
+  "duration": 420,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Conditional flows",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/step.html#conditionalFlow"
+      },
+      {
+        "text": "Parallel flows",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/step.html#split-flows"
+      }
+    ]
+  }
+}

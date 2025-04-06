@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-fault-tolerance-retrying-lab",
+  "slug": "spring-batch-fault-tolerance-retrying-lab",
+  "title": "Lab: Retrying processing errors",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "educates": "spr-batch-fault-tolerance-retrying"
+  }
+}

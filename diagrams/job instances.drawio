@@ -1,0 +1,79 @@
+<mxfile host="Electron" modified="2023-05-12T21:47:12.123Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="LdkVyJ2ZQ2baRBX16e3D" version="21.2.8" type="device">
+  <diagram name="Page-1" id="N31Ih0QBeNijFY81hRy2">
+    <mxGraphModel dx="1017" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="xX24Tsl0bHZo-DWWqhyH-1" target="xX24Tsl0bHZo-DWWqhyH-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="280" />
+              <mxPoint x="260" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-6" value="schedule.date=2023/01/01" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=12;" parent="xX24Tsl0bHZo-DWWqhyH-4" vertex="1" connectable="0">
+          <mxGeometry x="0.2095" y="-3" relative="1" as="geometry">
+            <mxPoint x="-23" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xX24Tsl0bHZo-DWWqhyH-1" target="xX24Tsl0bHZo-DWWqhyH-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="280" />
+              <mxPoint x="550" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-7" value="schedule.date=2023/01/02" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=12;" parent="xX24Tsl0bHZo-DWWqhyH-5" vertex="1" connectable="0">
+          <mxGeometry x="0.0364" y="1" relative="1" as="geometry">
+            <mxPoint x="16" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-1" value="EndOfDayJob" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="200" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-2" value="Job Instance 1&lt;br&gt;(for 2023/01/01)" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-3" value="Job Instance 2&lt;br&gt;(for 2023/01/02)" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-13" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;curved=1;dashed=1;" parent="1" source="xX24Tsl0bHZo-DWWqhyH-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="260" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="271" y="235" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-8" value="Job parameter" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="90" y="220" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-17" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;curved=1;dashed=1;" parent="1" source="xX24Tsl0bHZo-DWWqhyH-10" target="xX24Tsl0bHZo-DWWqhyH-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-10" value="Job" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="540" y="170" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-15" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=none;curved=1;" parent="1" source="xX24Tsl0bHZo-DWWqhyH-11" target="xX24Tsl0bHZo-DWWqhyH-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="725" y="400" />
+              <mxPoint x="260" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-18" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;curved=1;dashed=1;" parent="1" source="xX24Tsl0bHZo-DWWqhyH-11" target="xX24Tsl0bHZo-DWWqhyH-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-19" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;curved=1;dashed=1;" parent="1" source="xX24Tsl0bHZo-DWWqhyH-11" target="xX24Tsl0bHZo-DWWqhyH-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xX24Tsl0bHZo-DWWqhyH-11" value="Job instances" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="355" y="430" width="90" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

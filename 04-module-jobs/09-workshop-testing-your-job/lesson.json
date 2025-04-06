@@ -1,0 +1,13 @@
+{
+  "id": "spring-batch-essentials-jobs-testing-your-job-workshop",
+  "slug": "spring-batch-jobs-testing-your-job-workshop",
+  "title": "Lab: Testing Your Job",
+  "status": "live",
+  "type": "lab",
+  "duration": 1200,
+  "settings": {
+    "educates": "spr-batch-testing-your-job-workshop",
+    "manualCompletion": true,
+    "links": []
+  }
+}

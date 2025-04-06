@@ -1,0 +1,16 @@
+modules:
+  01-using-job-parameters:
+    name: Using Job parameters
+    exit_sign: Continue
+  02-learning-moment:
+    name: "Learning Moment: Re-running a Job instance"
+    exit_sign: Continue
+  03-launching-second-job-instance:
+    name: Launching a second Job instance
+    exit_sign: Continue
+  04-updating-the-test:
+    name: Update the test
+    exit_sign: Continue
+  05-summary:
+    name: Summary
+    exit_sign: Finish

@@ -1,0 +1,22 @@
+modules:
+  01-overview:
+    name: Overview
+    exit_sign: Continue
+  02-config-reader:
+    name: "Configure the item reader"
+    exit_sign: Continue
+  03-config-writer:
+    name: "Configure the item writer"
+    exit_sign: Continue
+  04-config-file-ingestion:
+    name: "Configure the file ingestion step"
+    exit_sign: Continue
+  05-run:
+    name: "Run the job"
+    exit_sign: Continue
+  06-test:
+    name: "Update the test"
+    exit_sign: Continue
+  99-summary:
+    name: "Summary"
+    exit_sign: Finish

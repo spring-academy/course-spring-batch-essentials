@@ -1,0 +1,1 @@
+In this lesson, you learned what `JobInstance`s are and how to identify them with `JobParameter`s. In the Lab of this lesson, you'll learn how to use the APIs provided by Spring Batch to manipulate `JobParameter`s, and how to start the same or different `JobInstance`s.

@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-steps-first-step",
+  "slug": "spring-batch-steps-first-step",
+  "title": "Lab: First Step",
+  "status": "live",
+  "type": "lab",
+  "duration": 900,
+  "settings": {
+    "manualCompletion": true,
+    "educates": "spr-batch-first-step"
+  }
+}

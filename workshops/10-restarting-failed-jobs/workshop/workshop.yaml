@@ -1,0 +1,9 @@
+name: Testing your Job
+modules:
+  activate:
+    - 01-overview
+    - 02-run-1
+    - 03-fix-and-run-1
+    - 04-fix-and-run-2
+    - 05-metadata
+    - 99-summary

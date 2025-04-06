@@ -1,0 +1,1 @@
+In this lesson you learned how to create steps and how to define the logic of a job with a flow of steps. In the Lab of this lesson, we'll put all this into practice by implementing the first step of the `BilllingJob`.

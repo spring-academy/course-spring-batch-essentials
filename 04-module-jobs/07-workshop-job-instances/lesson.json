@@ -1,0 +1,22 @@
+{
+  "id": "spring-batch-essentials-jobs-understanding-job-instances-workshop",
+  "slug": "spring-batch-jobs-understanding-job-instances-workshop",
+  "title": "Lab: Using Job parameters to create Job Instances",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "educates": "spr-batch-understanding-job-instances-workshop",
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Job instance identification",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/schema-appendix.html#metaDataBatchJobInstance"
+      },
+      {
+        "text": "Job keys generation APIs",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/JobKeyGenerator.html"
+      }
+    ]
+  }
+}

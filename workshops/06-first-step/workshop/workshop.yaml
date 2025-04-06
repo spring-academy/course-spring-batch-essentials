@@ -1,0 +1,11 @@
+name: Testing your Job
+modules:
+  activate:
+    - 01-overview
+    - 02-tasklet
+    - 03-define
+    - 04-update-config
+    - 05-run-app
+    - 06-update-test
+    - 07-learning-moment
+    - 08-summary

@@ -1,0 +1,12 @@
+{
+  "id": "spring-batch-essentials-jobs-creating-jobs-workshop",
+  "slug": "spring-batch-jobs-creating-jobs-workshop",
+  "title": "Lab: Implement Your First Job",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "educates": "spr-batch-creating-jobs-workshop",
+    "manualCompletion": true
+  }
+}

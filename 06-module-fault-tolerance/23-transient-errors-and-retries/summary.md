@@ -1,0 +1,1 @@
+In this lesson, you learned about the retry feature in Spring Batch and how to use it. You also learned how to provide retry listeners and how to use custom retry policies. In the Lab of this lesson, we'll put these concepts into practice by implementing a retry policy for the report generation step.

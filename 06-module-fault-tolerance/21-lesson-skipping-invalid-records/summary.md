@@ -1,0 +1,1 @@
+In this lesson, you learned how to skip bad items and how to handle them with a `SkipListener`. You've also learned how to provide a custom skip policy with the `SkipPolicy` interface. In the next Lab, you'll see how to make the `BillingJob` tolerant to file parsing faults by skipping bad items.

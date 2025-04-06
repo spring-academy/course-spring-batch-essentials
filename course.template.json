@@ -1,0 +1,19 @@
+{
+  "id": "spring-batch-essentials",
+  "slug": "building-a-batch-application-with-spring-batch",
+  "title": "Building a Batch Application with Spring Batch",
+  "status": "live",
+  "order": 600,
+  "level": "beginner",
+  "topics": ["java", "spring-batch", "testing"],
+  "instructors": ["spring-mahmoud-ben-hassine"],
+  "entitlements": ["auth"],
+  "settings": {
+    "thumbnail": "https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/course-thumbnail.svg",
+    "debug.version": "${GITHUB_REF_NAME}",
+    "debug.commit": "${GITHUB_SHA}",
+    "debug.updated": "${DEBUG_DATE}",
+    "debug.who": "${GITHUB_ACTOR}",
+    "debug.github-workflow": "${GITHUB_WORKFLOW}"
+  }
+}

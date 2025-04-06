@@ -1,0 +1,10 @@
+{
+  "id": "spring-batch-essentials-jobs",
+  "slug": "spring-batch-jobs",
+  "title": "Create, run and test your Job",
+  "status": "live",
+  "duration": 3600,
+  "settings": {
+    "manualCompletion": true
+  }
+}

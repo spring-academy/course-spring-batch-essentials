@@ -1,0 +1,29 @@
+{
+  "id": "spring-batch-essentials-steps-understanding-steps",
+  "slug": "spring-batch-steps-understanding-steps",
+  "title": "Understanding Steps",
+  "status": "live",
+  "type": "article",
+  "duration": 420,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Partitioned steps",
+        "url": "https://docs.spring.io/spring-batch/reference/scalability.html#partitioning"
+      },
+      {
+        "text": "FlowStep",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/job/flow/FlowStep.html"
+      },
+      {
+        "text": "JobStep",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/step/job/JobStep.html"
+      },
+      {
+        "text": "Using SystemCommandTasklet",
+        "url": "https://docs.spring.io/spring-batch/reference/common-patterns.html#executingSystemCommands"
+      }
+    ]
+  }
+}

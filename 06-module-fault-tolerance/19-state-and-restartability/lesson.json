@@ -1,0 +1,11 @@
+{
+  "id": "spring-batch-essentials-fault-tolerance-state-management-and-restartability",
+  "slug": "spring-batch-essentials-fault-tolerance-state-management-restartability",
+  "title": "State management and restartability",
+  "status": "live",
+  "type": "article",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true
+  }
+}

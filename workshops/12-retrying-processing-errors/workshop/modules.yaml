@@ -1,0 +1,22 @@
+modules:
+  01-overview:
+    name: Overview
+    exit_sign: Continue
+  02-pricing-service:
+    name: "Discovering the pricing service"
+    exit_sign: Continue
+  03-update-billing-processor:
+    name: "Update the BillingDataProcessor"
+    exit_sign: Continue
+  04-build-and-run:
+    name: "Build and run the job"
+    exit_sign: Continue
+  05-retry:
+    name: "Implement the retry feature"
+    exit_sign: Continue
+  06-extra:
+    name: "Further exercises"
+    exit_sign: Continue
+  99-summary:
+    name: "Summary"
+    exit_sign: Finish

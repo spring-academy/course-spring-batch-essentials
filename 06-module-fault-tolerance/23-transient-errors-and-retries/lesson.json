@@ -1,0 +1,29 @@
+{
+  "id": "spring-batch-essentials-fault-tolerance-transient-error-and-retries",
+  "slug": "spring-batch-fault-tolerance-transient-error-and-retries",
+  "title": "Handling transient errors with retries",
+  "status": "live",
+  "type": "article",
+  "duration": 360,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Spring Retry",
+        "url": "https://github.com/spring-projects/spring-retry"
+      },
+      {
+        "text": "RetryListener",
+        "url": "https://www.javadoc.io/doc/org.springframework.retry/spring-retry/latest/org/springframework/retry/RetryListener.html"
+      },
+      {
+        "text": "RetryPolicy",
+        "url": "https://www.javadoc.io/doc/org.springframework.retry/spring-retry/latest/org/springframework/retry/RetryPolicy.html"
+      },
+      {
+        "text": "Built-in retry policies in Spring Retry",
+        "url": "https://www.javadoc.io/doc/org.springframework.retry/spring-retry/latest/org/springframework/retry/policy/package-summary.html"
+      }
+    ]
+  }
+}

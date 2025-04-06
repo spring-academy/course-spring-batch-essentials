@@ -1,0 +1,29 @@
+{
+  "id": "spring-batch-essentials-jobs-testing-jobs",
+  "slug": "spring-batch-testing-jobs",
+  "title": "Testing Your Job",
+  "status": "live",
+  "type": "article",
+  "duration": 480,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Unit Testing Jobs and Steps in Spring Batch",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/testing.html#testing"
+      },
+      {
+        "text": "Spring Batch JobLauncherTestUtils",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/test/JobLauncherTestUtils.html"
+      },
+      {
+        "text": "Spring Batch JobRepositoryTestUtils",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/test/JobRepositoryTestUtils.html"
+      },
+      {
+        "text": "TestContainers",
+        "url": "https://www.testcontainers.org/"
+      }
+    ]
+  }
+}

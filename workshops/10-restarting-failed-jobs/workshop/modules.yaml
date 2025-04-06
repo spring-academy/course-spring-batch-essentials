@@ -1,0 +1,22 @@
+modules:
+  01-overview:
+    name: Overview
+    exit_sign: Continue
+  02-run-1:
+    name: "Launch the billing job on March's billing data"
+    exit_sign: Continue
+  03-fix-and-run-1:
+    name: "Fix the data"
+    exit_sign: Continue
+  04-fix-and-run-2:
+    name: "Fix the data... again!"
+    exit_sign: Continue
+  05-metadata:
+    name: "Inspect the metadata of job executions"
+    exit_sign: Continue
+  06-test:
+    name: "Update the test"
+    exit_sign: Continue
+  99-summary:
+    name: "Summary"
+    exit_sign: Finish

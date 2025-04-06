@@ -1,0 +1,1 @@
+Congratulations! You have successfully implemented your first Spring Batch step! This step is a simple task that copies a file from one directory to another. In the next lesson and Lab, you will learn about and implement another type of tasklet, which consists of reading the billing data from the input file and writing it to the database.

@@ -1,0 +1,1 @@
+In this lesson, you learned how to process data in Spring Batch and the different use cases where this feature is useful. In the Lab of this lesson, you'll implement a custom `ItemProcessor` and learn how to add it to a chunk-oriented step.

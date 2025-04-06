@@ -1,0 +1,11 @@
+name: Testing your Job
+modules:
+  activate:
+    - 01-overview
+    - 02-reading-data
+    - 03-calculating
+    - 04-generating
+    - 05-add-new-step
+    - 06-run
+    - 07-test
+    - 99-summary

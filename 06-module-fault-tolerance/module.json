@@ -1,0 +1,10 @@
+{
+  "id": "spring-batch-essentials-fault-tolerance",
+  "slug": "spring-batch-fault-tolerance",
+  "title": "Make your Job tolerant to faults",
+  "status": "live",
+  "duration": 3600,
+  "settings": {
+    "manualCompletion": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "spring-batch-essentials-jobs-creating-jobs",
+  "slug": "spring-batch-creating-jobs",
+  "title": "Understanding jobs and how to run them",
+  "status": "live",
+  "type": "article",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Configuring and Running a Job",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#configureJob"
+      },
+      {
+        "text": "Running Jobs from the Command Line",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#runningJobsFromCommandLine"
+      },
+      {
+        "text": "Running Jobs from within a Web Container",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#runningJobsFromWebContainer"
+      },
+      {
+        "text": "Communicating exit codes to the Operating System",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#exitCodes"
+      }
+    ]
+  }
+}

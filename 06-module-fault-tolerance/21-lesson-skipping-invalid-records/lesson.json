@@ -1,0 +1,21 @@
+{
+  "id": "spring-batch-essentials-fault-tolerance-skipping-invalid-records",
+  "slug": "spring-batch-fault-tolerance-skipping-invalid-records",
+  "title": "Handling non-transient errors with skips",
+  "status": "live",
+  "type": "article",
+  "duration": 360,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "SkipListener",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/SkipListener.html"
+      },
+      {
+        "text": "SkipPolicy",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/step/skip/SkipPolicy.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "spring-batch-essentials-introduction",
+  "slug": "introduction",
+  "title": "Introduction",
+  "status": "live",
+  "type": "article",
+  "duration": 180,
+  "entitlements": [],
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Spring Batch reference documentation",
+        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/"
+      },
+      {
+        "text": "Spring Batch getting started guide",
+        "url": "https://spring.io/guides/gs/batch-processing/"
+      },
+      {
+        "text": "Spring Batch samples",
+        "url": "https://spring.io/projects/spring-batch#samples"
+      }
+    ]
+  }
+}
