@@ -75,7 +75,7 @@ name: Terminal
 ```shell
 [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2023-02.csv
 ...
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scopedTarget.billingDataFileWriter' defined in class path resource [example/billingjob/BillingJobConfiguration.class]: Failed to instantiate [org.springframework.batch.item.file.FlatFileItemWriter]: Factory method 'billingDataFileWriter' threw exception with message: Path must not be null
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scopedTarget.billingDataFileWriter' defined in class path resource [example/billingjob/BillingJobConfiguration.class]: Failed to instantiate [org.springframework.batch.infrastructure.item.file.FlatFileItemWriter]: Factory method 'billingDataFileWriter' threw exception with message: Path must not be null
 ```
 
 Always make sure to pass job parameters as intended or validate that by registering a `JobParametersValidator` in the job definition.

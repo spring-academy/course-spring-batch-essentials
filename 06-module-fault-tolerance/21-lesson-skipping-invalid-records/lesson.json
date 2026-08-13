@@ -10,11 +10,11 @@
     "links": [
       {
         "text": "SkipListener",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/SkipListener.html"
+        "url": "https://docs.spring.io/spring-batch/docs/6.0.x/api/org/springframework/batch/core/listener/SkipListener.html"
       },
       {
         "text": "SkipPolicy",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/step/skip/SkipPolicy.html"
+        "url": "https://docs.spring.io/spring-batch/docs/6.0.x/api/org/springframework/batch/core/step/skip/SkipPolicy.html"
       }
     ]
   }

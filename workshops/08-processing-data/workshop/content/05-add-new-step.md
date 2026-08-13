@@ -27,7 +27,7 @@ The report generation step is a chunk-oriented step, similar to the first step o
    You should also add the following import statement:
 
    ```java
-   import org.springframework.batch.item.ItemProcessor;
+   import org.springframework.batch.infrastructure.item.ItemProcessor;
    ```
 
    That's a lot of parameters and method calls! Let's make sure we understand exactly what's going on.

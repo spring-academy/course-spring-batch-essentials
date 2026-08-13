@@ -10,11 +10,11 @@
     "links": [
       {
         "text": "Item readers",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/appendix.html#itemReadersAppendix"
+        "url": "https://docs.spring.io/spring-batch/reference/appendix.html#itemReadersAppendix"
       },
       {
         "text": "Item writers",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/appendix.html#itemWritersAppendix"
+        "url": "https://docs.spring.io/spring-batch/reference/appendix.html#itemWritersAppendix"
       }
     ]
   }

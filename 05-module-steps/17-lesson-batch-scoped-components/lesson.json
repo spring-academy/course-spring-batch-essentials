@@ -10,7 +10,7 @@
     "links": [
       {
         "text": "Late binding of job and step attributes",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/step.html#late-binding"
+        "url": "https://docs.spring.io/spring-batch/reference/step/late-binding.html"
       },
       {
         "text": "Spring Expression Language (SpEL)",

@@ -38,7 +38,7 @@ This pricing configuration might vary and should be externalized in configuratio
    ```java
    package example.billingjob;
 
-   import org.springframework.batch.item.ItemProcessor;
+   import org.springframework.batch.infrastructure.item.ItemProcessor;
    import org.springframework.beans.factory.annotation.Value;
 
    public class BillingDataProcessor implements ItemProcessor<BillingData, ReportingData> {

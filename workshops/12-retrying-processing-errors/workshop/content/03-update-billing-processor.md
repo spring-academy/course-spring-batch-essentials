@@ -12,7 +12,7 @@ We need to make some updates to our billing job to make use of the new `PricingS
    ```java
    package example.billingjob;
 
-   import org.springframework.batch.item.ItemProcessor;
+   import org.springframework.batch.infrastructure.item.ItemProcessor;
    import org.springframework.beans.factory.annotation.Value;
 
    public class BillingDataProcessor implements ItemProcessor<BillingData, ReportingData> {

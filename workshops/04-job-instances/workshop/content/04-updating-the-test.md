@@ -32,7 +32,7 @@ We should update the test logic accordingly.
    You should also add the following import statement:
 
    ```java
-   import org.springframework.batch.core.JobParametersBuilder;
+   import org.springframework.batch.core.job.parameters.JobParametersBuilder;
    ```
 
    The `JobParametersBuilder` is the main API provided by Spring Batch to build a set of `JobParameter`s. In this test, we use that builder to create a parameter of type `String` named `input.file` having the `/some/input/file` value.

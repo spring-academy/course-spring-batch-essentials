@@ -41,7 +41,7 @@ Often, manually fixing a failed job's input file is the most pragmatic solution.
    ```
 
    ```shell
-   org.springframework.batch.item.file.FlatFileParseException: Parsing error at line: 408 in resource=[file [/home/eduk8s/exercises/input/billing-2023-03.csv]], input=[2023,03,507,404-555-1407,36-07,507,216]
+   org.springframework.batch.infrastructure.item.file.FlatFileParseException: Parsing error at line: 408 in resource=[file [/home/eduk8s/exercises/input/billing-2023-03.csv]], input=[2023,03,507,404-555-1407,36-07,507,216]
    ...
    Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'float'; For input string: "36-07"
    ...

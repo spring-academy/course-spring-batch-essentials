@@ -34,7 +34,7 @@ The file ingestion step is the step where billing data is parsed from the input 
    You also need to add the following import statement:
 
    ```java
-   import org.springframework.batch.item.file.FlatFileParseException;
+   import org.springframework.batch.infrastructure.item.file.FlatFileParseException;
    ```
 
 1. Understand the update.

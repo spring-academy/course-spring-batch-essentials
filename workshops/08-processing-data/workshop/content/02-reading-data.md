@@ -27,8 +27,8 @@ This reader opens a JDBC cursor on a given table and returns items from the JDBC
    You also need to add the following import statements:
 
    ```java
-   import org.springframework.batch.item.database.JdbcCursorItemReader;
-   import org.springframework.batch.item.database.builder.JdbcCursorItemReaderBuilder;
+   import org.springframework.batch.infrastructure.item.database.JdbcCursorItemReader;
+   import org.springframework.batch.infrastructure.item.database.builder.JdbcCursorItemReaderBuilder;
    import org.springframework.jdbc.core.DataClassRowMapper;
    ```
 

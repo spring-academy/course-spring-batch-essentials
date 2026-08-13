@@ -4,7 +4,7 @@ As a further exercise, try the following scenarios:
 
 In the `FilePreparationTasklet`, what if the job parameter `input.file` is not passed to the job as expected? You can update the implementation to check the existence of that mandatory parameter and throw an exception to make the tasklet (and the enclosing step and job) fail.
 
-You can also set a `JobParametersValidator` on the job to validate the existence of the `input.file` parameter. Feel free to review `JobParametersValidator` [in the documentation](https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#jobparametersvalidator).
+You can also set a `JobParametersValidator` on the job to validate the existence of the `input.file` parameter. Feel free to review `JobParametersValidator` [in the documentation](https://docs.spring.io/spring-batch/reference/job/configuring-job.html#jobparametersvalidator).
 
 ### Force an exception
 

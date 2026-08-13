@@ -69,8 +69,8 @@ Billing data should be saved into the database for later use to generate the bil
 
    ```java
    import javax.sql.DataSource;
-   import org.springframework.batch.item.database.JdbcBatchItemWriter;
-   import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;
+   import org.springframework.batch.infrastructure.item.database.JdbcBatchItemWriter;
+   import org.springframework.batch.infrastructure.item.database.builder.JdbcBatchItemWriterBuilder;
    ```
 
    The `JdbcBatchItemWriter` needs a lot of information to correctly write our billing data to the database. Let's look at the `JdbcBatchItemWriter` in more detail for how this is accomplished.

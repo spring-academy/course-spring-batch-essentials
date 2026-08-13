@@ -17,7 +17,7 @@ You should see something like the following output in the Editor's _TERMINAL_ ta
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.0.5)
+ :: Spring Boot ::                (v4.1.0)
 
 2023-04-13T12:06:41.998Z  INFO 16276 --- [           main] e.billingjob.BillingJobApplication       : Starting BillingJobApplication using Java 17.0.6 with PID 16276 (/home/eduk8s/exercises/billing-job/target/classes started by eduk8s in /home/eduk8s/exercises)
 2023-04-13T12:06:42.002Z  INFO 16276 --- [           main] e.billingjob.BillingJobApplication       : No active profile set, falling back to 1 default profile: "default"

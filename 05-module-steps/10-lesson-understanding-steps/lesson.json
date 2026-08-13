@@ -14,11 +14,11 @@
       },
       {
         "text": "FlowStep",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/job/flow/FlowStep.html"
+        "url": "https://docs.spring.io/spring-batch/docs/6.0.x/api/org/springframework/batch/core/job/flow/FlowStep.html"
       },
       {
         "text": "JobStep",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/step/job/JobStep.html"
+        "url": "https://docs.spring.io/spring-batch/docs/6.0.x/api/org/springframework/batch/core/step/job/JobStep.html"
       },
       {
         "text": "Using SystemCommandTasklet",

@@ -15,7 +15,7 @@ of bean definitions. In this section, we create a Spring configuration class tha
    ```java
    package example.billingjob;
 
-   import org.springframework.batch.core.Job;
+   import org.springframework.batch.core.job.Job;
    import org.springframework.context.annotation.Bean;
    import org.springframework.context.annotation.Configuration;
 

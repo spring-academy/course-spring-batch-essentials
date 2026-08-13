@@ -25,8 +25,8 @@ Now that the item reader and writer have been configured, we can define the `fil
    Be sure to add the two additional imports:
 
    ```java
-   import org.springframework.batch.item.ItemReader;
-   import org.springframework.batch.item.ItemWriter;
+   import org.springframework.batch.infrastructure.item.ItemReader;
+   import org.springframework.batch.infrastructure.item.ItemWriter;
    ```
 
    In this snippet, we define a bean named `step2` of type `Step`, and it has a lot going on. Let's dive into the details next.

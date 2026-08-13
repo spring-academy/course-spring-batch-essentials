@@ -10,11 +10,11 @@
     "links": [
       {
         "text": "Spring Batch domain model",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/domain.html#domainLanguageOfBatch"
+        "url": "https://docs.spring.io/spring-batch/reference/domain.html"
       },
       {
         "text": "Spring Batch Meta-Data Schema",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/schema-appendix.html#metaDataSchema"
+        "url": "https://docs.spring.io/spring-batch/reference/schema-appendix.html#metaDataSchemaOverview"
       }
     ]
   }

@@ -17,7 +17,7 @@ public Step step1(JobRepository jobRepository, JdbcTransactionManager transactio
 You should also add the following import statements:
 
 ```java
-import org.springframework.batch.core.Step;
+import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.jdbc.support.JdbcTransactionManager;
 ```

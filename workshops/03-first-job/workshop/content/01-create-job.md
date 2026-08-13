@@ -19,8 +19,8 @@ to understand the responsibilities of a Spring Batch `Job`, we implement the `Jo
    ```java
    package example.billingjob;
 
-   import org.springframework.batch.core.Job;
-   import org.springframework.batch.core.JobExecution;
+   import org.springframework.batch.core.job.Job;
+   import org.springframework.batch.core.job.JobExecution;
 
    public class BillingJob implements Job {
 

@@ -24,8 +24,8 @@ public FlatFileItemWriter<ReportingData> billingDataFileWriter() {
 You should also add the following import statements:
 
 ```java
-import org.springframework.batch.item.file.FlatFileItemWriter;
-import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
+import org.springframework.batch.infrastructure.item.file.FlatFileItemWriter;
+import org.springframework.batch.infrastructure.item.file.builder.FlatFileItemWriterBuilder;
 ```
 
 The `FlatFileItemWriter` needs to be configured with the target file, which is `staging/billing-report-2023-01.csv`. We also need to specify the format of the file (which is delimited in our case) and the fields we want to export in it. This is done using the `.delimited()` and `.names()` methods respectively.

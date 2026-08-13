@@ -134,7 +134,7 @@ This class is a placeholder for Spring Batch related beans (Jobs, Steps, etc) an
    ) ;
    CREATE SEQUENCE BATCH_STEP_EXECUTION_SEQ MAXVALUE 9223372036854775807 NO CYCLE;
    CREATE SEQUENCE BATCH_JOB_EXECUTION_SEQ MAXVALUE 9223372036854775807 NO CYCLE;
-   CREATE SEQUENCE BATCH_JOB_SEQ MAXVALUE 9223372036854775807 NO CYCLE;
+   CREATE SEQUENCE BATCH_JOB_INSTANCE_SEQ MAXVALUE 9223372036854775807 NO CYCLE;
    ```
 
    Finally, check that all tables were correctly created using the `\d` command:
@@ -149,7 +149,7 @@ This class is a placeholder for Spring Batch related beans (Jobs, Steps, etc) an
     public | batch_job_execution_params   | table    | postgres
     public | batch_job_execution_seq      | sequence | postgres
     public | batch_job_instance           | table    | postgres
-    public | batch_job_seq                | sequence | postgres
+    public | batch_job_instance_seq       | sequence | postgres
     public | batch_step_execution         | table    | postgres
     public | batch_step_execution_context | table    | postgres
     public | batch_step_execution_seq     | sequence | postgres

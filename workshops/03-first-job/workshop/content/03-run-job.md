@@ -22,7 +22,7 @@ Spring Boot looks for our `Job` in the application context and runs it by using 
    \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
    '  |____| .__|_| |_|_| |_\__, | / / / /
    =========|_|==============|___/=/_/_/_/
-   :: Spring Boot ::                (v3.0.5)
+   :: Spring Boot ::                (v4.1.0)
 
    2023-04-28T08:28:50.992Z  INFO 7241 --- [           main] e.billingjob.BillingJobApplication       : Starting BillingJobApplication using Java 17.0.6 with PID 7241 (/home/eduk8s/exercises/target/classes started by eduk8s in /home/eduk8s/exercises)
    2023-04-28T08:28:50.995Z  INFO 7241 --- [           main] e.billingjob.BillingJobApplication       : No active profile set, falling back to 1 default profile: "default"

@@ -10,19 +10,19 @@
     "links": [
       {
         "text": "Configuring and Running a Job",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#configureJob"
+        "url": "https://docs.spring.io/spring-batch/reference/job/configuring-job.html"
       },
       {
         "text": "Running Jobs from the Command Line",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#runningJobsFromCommandLine"
+        "url": "https://docs.spring.io/spring-batch/reference/job/running.html#runningJobsFromCommandLine"
       },
       {
         "text": "Running Jobs from within a Web Container",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#runningJobsFromWebContainer"
+        "url": "https://docs.spring.io/spring-batch/reference/job/running.html#runningJobsFromWebContainer"
       },
       {
         "text": "Communicating exit codes to the Operating System",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/job.html#exitCodes"
+        "url": "https://docs.spring.io/spring-batch/reference/job/running.html#exitCodes"
       }
     ]
   }

@@ -18,8 +18,8 @@ First, let's implement a `SkipListener` that writes skipped lines to a given fil
    import java.nio.file.Paths;
    import java.nio.file.StandardOpenOption;
 
-   import org.springframework.batch.core.SkipListener;
-   import org.springframework.batch.item.file.FlatFileParseException;
+   import org.springframework.batch.core.listener.SkipListener;
+   import org.springframework.batch.infrastructure.item.file.FlatFileParseException;
 
    public class BillingDataSkipListener implements SkipListener<BillingData, BillingData> {
 

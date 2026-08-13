@@ -58,8 +58,8 @@ While we can configure the reader to return Strings or byte arrays from the file
    You should also add the following import statements:
 
    ```java
-   import org.springframework.batch.item.file.FlatFileItemReader;
-   import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
+   import org.springframework.batch.infrastructure.item.file.FlatFileItemReader;
+   import org.springframework.batch.infrastructure.item.file.builder.FlatFileItemReaderBuilder;
    import org.springframework.core.io.FileSystemResource;
    ```
 

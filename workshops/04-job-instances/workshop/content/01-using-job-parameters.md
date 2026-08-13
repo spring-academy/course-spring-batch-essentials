@@ -33,7 +33,7 @@ For now, all you have to understand is that we will pass these files as paramete
    You should also add the following import statement:
 
    ```java
-   import org.springframework.batch.core.JobParameters;
+   import org.springframework.batch.core.job.parameters.JobParameters;
    ```
 
    In this section, we get access to `JobParameter`s from the `JobExecution` reference and extract the `input.file` parameter. We then updated the message we print to the standard output to show which file the current execution is processing.

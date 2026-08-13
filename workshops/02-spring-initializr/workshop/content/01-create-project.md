@@ -16,7 +16,7 @@ Complete the following steps to use Spring Initializr to set up the Spring Cellu
 
    - Project: Maven
    - Language: Java
-   - Spring Boot: The latest 3.0.X version
+   - Spring Boot: The latest 4.1.X version
 
 3. Enter the following values next to the corresponding Project Metadata fields:
 
@@ -30,7 +30,7 @@ Complete the following steps to use Spring Initializr to set up the Spring Cellu
 
 4. Select the `ADD DEPENDENCIES...` button from the `Dependencies` panel and add the following dependencies:
 
-   - `Spring Batch`: Adds the `org.springframework.boot:spring-boot-starter-batch` artifact, which brings Spring Batch artifacts and other Spring Boot artifacts that are required for building a batch application.
+   - `Spring Batch JDBC`: Adds the `org.springframework.boot:spring-boot-starter-batch-jdbc` artifact, which brings Spring Batch artifacts and other Spring Boot artifacts that are required for building a batch application backed by a JDBC `JobRepository`.
    - `PostgreSQL Driver`: Adds the `org.postgresql:postgresql` artifact, which is the JDBC driver for PostgreSQL.
 
    In this course, we use [PostgreSQL](https://www.postgresql.org) as a database for the `JobRepository`. PostgreSQL is an open source production-grade object-relational database system.

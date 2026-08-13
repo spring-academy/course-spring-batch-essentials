@@ -11,11 +11,11 @@
     "links": [
       {
         "text": "Job instance identification",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/schema-appendix.html#metaDataBatchJobInstance"
+        "url": "https://docs.spring.io/spring-batch/reference/schema-appendix.html#metaDataBatchJobInstance"
       },
       {
         "text": "Job keys generation APIs",
-        "url": "https://docs.spring.io/spring-batch/docs/5.0.4/api/org/springframework/batch/core/JobKeyGenerator.html"
+        "url": "https://docs.spring.io/spring-batch/docs/6.0.x/api/org/springframework/batch/core/job/JobKeyGenerator.html"
       }
     ]
   }
