@@ -64,17 +64,17 @@ Complete the following steps to use Spring Initializr to set up the Spring Cellu
        ├── main
        │   ├── java
        │   │   └── example
-       │   │       └── billingjob
+       │   │       └── billing_job
        │   │           └── BillingJobApplication.java
        │   └── resources
        │       └── application.properties
        └── test
            └── java
                └── example
-                   └── billingjob
+                   └── billing_job
                        └── BillingJobApplicationTests.java
 
-   11 directories, 8 files
+   11 directories, 7 files
    ```
 
    The project is structured as follows:

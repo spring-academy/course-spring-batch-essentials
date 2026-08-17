@@ -1,9 +1,9 @@
 Now that the structure of the application is in place, let's check if the application is correctly configured and running as expected.
 
-In the editor tab, right-click on the `billing-job/src/main/java/example/billingjob/BillingJobApplication.java` file and select `Run Java`.
+In the editor tab, right-click on the `billing-job/src/main/java/example/billing_job/BillingJobApplication.java` file and select `Run Java`.
 
 ```editor:select-matching-text
-file: ~/exercises/billing-job/src/main/java/example/billingjob/BillingJobApplication.java
+file: ~/exercises/billing-job/src/main/java/example/billing_job/BillingJobApplication.java
 text: "@SpringBootApplication"
 description: "Right-click ➡️ Run Java"
 ```

@@ -7,12 +7,12 @@ For a properly structured Spring Batch project, we should not put any batch conf
 Open the editor in the `billing-job/src/main/java/example/billingjob` folder and create a new file named `BillingJobConfiguration.java` with the following content:
 
 ```editor:append-lines-to-file
-file: ~/exercises/billing-job/src/main/java/example/billingjob/BillingJobConfiguration.java
+file: ~/exercises/billing-job/src/main/java/example/billing_job/BillingJobConfiguration.java
 description: "Create BillingJobConfiguration.java"
 ```
 
 ```java
-package example.billingjob;
+package example.billing_job;
 
 import org.springframework.context.annotation.Configuration;
 
