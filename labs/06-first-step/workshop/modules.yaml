@@ -1,0 +1,25 @@
+modules:
+  01-overview:
+    name: Overview
+    exit_sign: Continue
+  02-tasklet:
+    name: "Implement the FilePreparationTasklet"
+    exit_sign: Continue
+  03-define:
+    name: "Define the FilePreparation Step"
+    exit_sign: Continue
+  04-update-config:
+    name: "Update the job configuration"
+    exit_sign: Continue
+  05-run-app:
+    name: "Run the application"
+    exit_sign: Continue
+  06-update-test:
+    name: "Update the job test"
+    exit_sign: Continue
+  07-learning-moment:
+    name: "Further exercises and learning moments"
+    exit_sign: Continue
+  08-summary:
+    name: "Summary"
+    exit_sign: Finish

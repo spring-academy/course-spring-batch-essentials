@@ -1,0 +1,10 @@
+name: Testing your Job
+modules:
+  activate:
+    - 01-overview
+    - 02-file-reader
+    - 03-table-reader
+    - 04-item-writer
+    - 05-run
+    - 06-test
+    - 99-summary

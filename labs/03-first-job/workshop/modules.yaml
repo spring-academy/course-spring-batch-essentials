@@ -1,0 +1,25 @@
+modules:
+  01-create-job:
+    name: Implement Your First Job
+    exit_sign: Continue
+  02-configure-job:
+    name: Configure the Job
+    exit_sign: Continue
+  03-run-job:
+    name: Run the Job
+    exit_sign: Continue
+  04-verify-job:
+    name: Verify the Job
+    exit_sign: Continue
+  05-learning-moment:
+    name: "Learning Moment: Handling Errors"
+    exit_sign: Continue
+  06-test-job:
+    name: Test the Job
+    exit_sign: Continue
+  07-summary:
+    name: Summary
+    exit_sign: Finish
+  08-test:
+    name: Test
+    exit_sign: Finish

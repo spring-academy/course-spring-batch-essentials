@@ -1,0 +1,10 @@
+name: Testing your Job
+modules:
+  activate:
+    - 01-overview
+    - 02-config-reader
+    - 03-config-writer
+    - 04-config-file-ingestion
+    - 05-run
+    - 06-test
+    - 99-summary

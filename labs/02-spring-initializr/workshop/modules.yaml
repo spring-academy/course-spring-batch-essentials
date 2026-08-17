@@ -1,0 +1,13 @@
+modules:
+  01-create-project:
+    name: Create Project With Spring Initializr
+    exit_sign: Continue
+  02-prepare-project:
+    name: Prepare the Project for Spring Batch
+    exit_sign: Continue
+  03-run-project:
+    name: Verify the project's configuration
+    exit_sign: Continue
+  04-summary:
+    name: Summary
+    exit_sign: Finish

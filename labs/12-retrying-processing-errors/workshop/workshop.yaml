@@ -1,0 +1,10 @@
+name: Skipping invalid records
+modules:
+  activate:
+    - 01-overview
+    - 02-pricing-service
+    - 03-update-billing-processor
+    - 04-build-and-run
+    - 05-retry
+    - 06-extra
+    - 99-summary

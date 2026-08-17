@@ -1,0 +1,9 @@
+name: Testing your Job
+modules:
+  activate:
+    - 01-overview
+    - 02-import-utilities
+    - 03-launch
+    - 04-cleanup
+    - 05-unique-params
+    - 09-summary

@@ -1,0 +1,25 @@
+modules:
+  01-overview:
+    name: Overview
+    exit_sign: Continue
+  02-reading-data:
+    name: "Reading billing data from the database"
+    exit_sign: Continue
+  03-calculating:
+    name: "Calculating reporting data"
+    exit_sign: Continue
+  04-generating:
+    name: "Generating the billing report"
+    exit_sign: Continue
+  05-add-new-step:
+    name: "Define the report generation step"
+    exit_sign: Continue
+  06-run:
+    name: "Run the job"
+    exit_sign: Continue
+  07-test:
+    name: "Update the test"
+    exit_sign: Continue
+  99-summary:
+    name: "Summary"
+    exit_sign: Finish

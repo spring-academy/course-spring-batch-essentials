@@ -1,0 +1,10 @@
+name: Implement Your First Job
+modules:
+  activate:
+    - 01-create-job
+    - 02-configure-job
+    - 03-run-job
+    - 04-verify-job
+    - 05-learning-moment
+    - 06-test-job
+    - 07-summary
