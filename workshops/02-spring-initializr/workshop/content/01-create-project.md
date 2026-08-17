@@ -39,6 +39,12 @@ Complete the following steps to use Spring Initializr to set up the Spring Cellu
    You will see how to access the database in the next section.
    For now, all we need is adding the JDBC driver dependency that will be used by the batch application to access the database.
 
+   > **Learning Moment:** Why `Spring Batch JDBC` and not just `Spring Batch`?
+   >
+   > Since Spring Batch 6, the plain `Spring Batch` dependency configures a _resourceless_ `JobRepository` that keeps job metadata in memory instead of a database. That's a fine default for a job that never needs to survive a restart, but it means job history disappears the moment the application stops.
+   >
+   > This course relies on a persistent `JobRepository` to demonstrate restartability, skipping invalid records, and retrying transient errors in later modules, so we need the database-backed job repository that `Spring Batch JDBC` provides.
+
 5. Click the `CREATE` button. Spring Initializr generates a zip file of code and unzips it in your home directory.
 
    At this point, you should have the following structure in the `~/exercises/billing-job` directory:
