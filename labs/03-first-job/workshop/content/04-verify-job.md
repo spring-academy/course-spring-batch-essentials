@@ -16,9 +16,9 @@ Let's check the `Job` status in the database.
 
    ```shell
    [~/exercises] $ docker exec postgres psql -U postgres -c 'select * from BATCH_JOB_EXECUTION;'
-   job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status  | exit_code | exit_message |        last_updated
-   ------------------+---------+-----------------+----------------------------+------------+----------+----------+-----------+--------------+----------------------------
-                   1 |       0 |               1 | 2023-04-28 08:28:52.033414 |            |          | STARTING | UNKNOWN   |              | 2023-04-28 08:28:52.033859
+    job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status  | exit_code | exit_message | last_updated 
+   ------------------+---------+-----------------+----------------------------+------------+----------+----------+-----------+--------------+--------------
+                   1 |       0 |               1 | 2026-08-18 10:49:18.764691 |            |          | STARTING | UNKNOWN   |              | 
    (1 row)
 
    [~/exercises] $
@@ -155,7 +155,7 @@ Let's check the `Job` status in the database.
 
    ```shell
    ...
-   2023-05-03T21:21:07.939Z  INFO 7458 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [example.billingjob.BillingJob@66f0548d] completed with the following parameters: [{}] and the following status: [COMPLETED]
+   2026-08-18T10:53:21.618Z  INFO 3644 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [example.billingjob.BillingJob@3b705be7] completed with the following parameters: [{}] and the following status: [COMPLETED]
    ```
 
    If the `Job`'s status is `COMPLETED`, then congratulations! You successfully created, configured and run your first Spring Batch `Job`!

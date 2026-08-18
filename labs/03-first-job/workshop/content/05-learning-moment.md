@@ -38,9 +38,9 @@ name: Terminal
 
 ```shell
 [~/exercises] $ docker exec postgres psql -U postgres -c 'select * from BATCH_JOB_EXECUTION;'
- job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status   | exit_code |             exit_message              |        last_updated
+ job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status   | exit_code |             exit_message              |        last_updated        
 ------------------+---------+-----------------+----------------------------+------------+----------+-----------+-----------+---------------------------------------+----------------------------
-                1 |       1 |               1 | 2023-05-03 21:30:29.142053 |            |          | COMPLETED | FAILED    | Unable to process billing information | 2023-05-03 21:30:29.151454
+                1 |       1 |               1 | 2026-08-18 10:54:40.104492 |            |          | COMPLETED | FAILED    | Unable to process billing information | 2026-08-18 10:54:40.137515
 (1 row)
 ```
 

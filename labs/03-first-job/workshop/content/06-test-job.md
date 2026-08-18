@@ -1,7 +1,7 @@
 Now that our job implementation is complete, we can write a test for it.
 Spring Batch provides several test utilities to simplify testing Batch components. We cover those later in the course.
 
-For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and the test utilities provided by Spring Boot.
+For this lesson, we see how to test a Spring Batch `Job` by using JUnit 6 and the test utilities provided by Spring Boot.
 
 1. Update the `BillingJobApplicationTests`.
 
@@ -31,8 +31,8 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
    import org.springframework.test.context.TestPropertySource;
 
    @SpringBootTest
-   @TestPropertySource(properties = "spring.batch.job.enabled=false")
    @ExtendWith(OutputCaptureExtension.class)
+   @TestPropertySource(properties = "spring.batch.job.enabled=false")
    class BillingJobApplicationTests {
 
    	@Autowired
@@ -79,7 +79,18 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
      }
      ```
 
-   - We can then autowire the `Job` under test as well as `JobLauncher` from the test context.
+   - Finally we add `@TestPropertySource(properties = "spring.batch.job.enabled=false")` to disable the automatic execution of Spring Batch jobs when the test application context boots up. This prevents the automatic creation of a job instance before we are able to manually launch our test.
+  
+      ```java
+      @SpringBootTest
+      @ExtendWith(OutputCaptureExtension.class)
+      @TestPropertySource(properties = "spring.batch.job.enabled=false")
+      class BillingJobApplicationTests {
+      ...
+      }
+     ```
+
+   - We can then autowire the `Job` under test as well as `JobOperator` from the test context.
 
      ```java
      ...
@@ -87,7 +98,7 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
      private Job job;
 
      @Autowired
-     private JobLauncher jobLauncher;
+     private JobOperator jobOperator;
      ...
      ```
 
@@ -106,7 +117,7 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
      	JobParameters jobParameters = new JobParameters();
 
      	// when
-     	JobExecution jobExecution = this.jobLauncher.run(this.job, jobParameters);
+     	JobExecution jobExecution = this.jobOperator.run(this.job, jobParameters);
 
      	...
      }
@@ -127,7 +138,17 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
 
    That's all we need to test our billing `Job`.
 
-4. Run the test.
+4. The test will attempt to create a new instance of the job and will fail as an instance already exists from previous runs. Clean up the previously run `Job`. In the **Terminal** tab, run the following commands:
+
+   ```dashboard:open-dashboard
+   name: Terminal
+   ```
+
+   ```shell
+   [~/exercises] $ scripts/drop-create-database.sh
+   ```
+
+5. Run the test.
 
    To execute the test from the `Editor` tab, right-click on the `src/test/java/example/billingjob/BillingJobApplicationTests.java` and select `Run Java`.
 
