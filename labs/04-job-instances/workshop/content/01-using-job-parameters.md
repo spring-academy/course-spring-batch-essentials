@@ -4,7 +4,7 @@ In this Lab, you will learn how to pass parameters to a `Job` in order to create
 Our Spring Cellular `BillingJob` is expected to process monthly billing data from a flat file.
 The input file will be used as an identifying `Job` parameter named `input.file`. Therefore, we would have a distinct `JobInstance` per month.
 
-The `src/main/resources` folder contains two flat files, `billing-2023-01.csv` and `billing-2023-02.csv` containing respectively the billing data for January 2023 and February 2023.
+The `src/main/resources` folder contains two flat files, `billing-2026-01.csv` and `billing-2026-02.csv` containing respectively the billing data for January 2026 and February 2026.
 You can explore the data in those files, but the content is not relevant to this Lab for the moment. We will explain the format of these files and what data they represent in a future Lab.
 For now, all you have to understand is that we will pass these files as parameters to our `BillingJob` to create distinct `JobInstance`s.
 
@@ -53,13 +53,13 @@ For now, all you have to understand is that we will pass these files as paramete
    Then, launch the `Job` and pass the input file as a parameter with the following command:
 
    ```shell
-   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=src/main/resources/billing-2023-01.csv
+   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=src/main/resources/billing-2026-01.csv
    ```
 
    You should see the following message in the console:
 
    ```shell
-   processing billing information from file src/main/resources/billing-2023-01.csv
+   processing billing information from file src/main/resources/billing-2026-01.csv
    ```
 
    Great! This means our `Job` is now able to get the input file from `JobParameter`s and process the data as expected. Now let's check the database to inspect the first `JobInstance` details.
@@ -119,10 +119,10 @@ For now, all you have to understand is that we will pass these files as paramete
    ```shell
    job_execution_id | parameter_name |  parameter_type  |            parameter_value             | identifying
    -----------------+----------------+------------------+----------------------------------------+-------------
-                  1 | input.file     | java.lang.String | src/main/resources/billing-2023-01.csv | Y
+                  1 | input.file     | java.lang.String | src/main/resources/billing-2026-01.csv | Y
    (1 row)
    ```
 
-   As expected, the first execution received the `input.file` `Job` parameter with the value `src/main/resources/billing-2023-01.csv`.
+   As expected, the first execution received the `input.file` `Job` parameter with the value `src/main/resources/billing-2026-01.csv`.
 
 This all works wonderfully! But what if we re-run the same `JobInstance` even if it completes successfully? Let's try it and find out.

@@ -1,6 +1,6 @@
-In this section, we launch a second `JobInstance` to process the billing data set of February 2023, which is in the `src/main/resources/billing-2023-02.csv` file.
+In this section, we launch a second `JobInstance` to process the billing data set of February 2026, which is in the `src/main/resources/billing-2026-02.csv` file.
 
-1. Launch the `BillingJob` and pass the `billing-2023-02.csv` file as a `JobParameter`.
+1. Launch the `BillingJob` and pass the `billing-2026-02.csv` file as a `JobParameter`.
 
    In the **Terminal** tab, run the following command:
 
@@ -9,16 +9,16 @@ In this section, we launch a second `JobInstance` to process the billing data se
    ```
 
    ```shell
-   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=src/main/resources/billing-2023-02.csv
+   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=src/main/resources/billing-2026-02.csv
    ```
 
    You should see the following message in the console:
 
    ```shell
-   processing billing information from file src/main/resources/billing-2023-02.csv
+   processing billing information from file src/main/resources/billing-2026-02.csv
    ```
 
-   This means our `BillingJob` has correctly processed the data of February 2023 and generated the report.
+   This means our `BillingJob` has correctly processed the data of February 2026 and generated the report.
 
    Now let's check the database to inspect the second `JobInstance` details.
 
@@ -75,8 +75,8 @@ In this section, we launch a second `JobInstance` to process the billing data se
    ```shell
    job_execution_id | parameter_name |  parameter_type  |            parameter_value             | identifying
    -----------------+----------------+------------------+----------------------------------------+-------------
-                  1 | input.file     | java.lang.String | src/main/resources/billing-2023-01.csv | Y
-                  2 | input.file     | java.lang.String | src/main/resources/billing-2023-02.csv | Y
+                  1 | input.file     | java.lang.String | src/main/resources/billing-2026-01.csv | Y
+                  2 | input.file     | java.lang.String | src/main/resources/billing-2026-02.csv | Y
    (2 rows)
    ```
 

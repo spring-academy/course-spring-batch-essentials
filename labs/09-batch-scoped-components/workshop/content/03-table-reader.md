@@ -1,4 +1,4 @@
-Now we are faced with another challenge: if we ingest data from two billing files for different periods (let's say `billing-2023-01.csv` and then `billing-2023-02.csv`) the file ingestion step will load all that data in the `BILLING_DATA` table. However, the `billingDataTableReader` is configured to read _all the data_ from that table. That's not good!
+Now we are faced with another challenge: if we ingest data from two billing files for different periods (let's say `billing-2026-01.csv` and then `billing-2026-02.csv`) the file ingestion step will load all that data in the `BILLING_DATA` table. However, the `billingDataTableReader` is configured to read _all the data_ from that table. That's not good!
 
 1. Review the hard-coded SQL.
 

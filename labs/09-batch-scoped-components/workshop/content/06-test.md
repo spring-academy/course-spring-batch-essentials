@@ -13,9 +13,9 @@ The last thing we have to do is to update the test of our job to accept the new 
    ```java
    // given
    JobParameters jobParameters = new JobParametersBuilder()
-   		.addString("input.file", "input/billing-2023-01.csv")
-   		.addString("output.file", "staging/billing-report-2023-01.csv")
-   		.addJobParameter("data.year", 2023, Integer.class)
+   		.addString("input.file", "input/billing-2026-01.csv")
+   		.addString("output.file", "staging/billing-report-2026-01.csv")
+   		.addJobParameter("data.year", 2026, Integer.class)
    		.addJobParameter("data.month", 1, Integer.class)
    		.toJobParameters();
    ```

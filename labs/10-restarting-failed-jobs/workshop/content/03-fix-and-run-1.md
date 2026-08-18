@@ -2,12 +2,12 @@ Often, manually fixing a failed job's input file is the most pragmatic solution.
 
 1. Edit the input file.
 
-   In the `Editor`, open `input/billing-2023-03.csv` and change value `92-94` at line 226 to `92.94`.
+   In the `Editor`, open `input/billing-2026-03.csv` and change value `92-94` at line 226 to `92.94`.
 
    ```editor:open-file
-   file: ~/exercises/input/billing-2023-03.csv
+   file: ~/exercises/input/billing-2026-03.csv
    line: 226
-   description: "Open billing-2023-03.csv at line 226"
+   description: "Open billing-2026-03.csv at line 226"
    ```
 
    Well, that was easy!
@@ -21,7 +21,7 @@ Often, manually fixing a failed job's input file is the most pragmatic solution.
    ```
 
    ```shell
-   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2023-03.csv output.file=staging/billing-report-2023-03.csv data.year=2023 data.month=3
+   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2026-03.csv output.file=staging/billing-report-2026-03.csv data.year=2026 data.month=3
    ```
 
    So what happened this time?
@@ -41,7 +41,7 @@ Often, manually fixing a failed job's input file is the most pragmatic solution.
    ```
 
    ```shell
-   org.springframework.batch.infrastructure.item.file.FlatFileParseException: Parsing error at line: 408 in resource=[file [/home/eduk8s/exercises/input/billing-2023-03.csv]], input=[2023,03,507,404-555-1407,36-07,507,216]
+   org.springframework.batch.infrastructure.item.file.FlatFileParseException: Parsing error at line: 408 in resource=[file [/home/eduk8s/exercises/input/billing-2026-03.csv]], input=[2026,03,507,404-555-1407,36-07,507,216]
    ...
    Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'float'; For input string: "36-07"
    ...

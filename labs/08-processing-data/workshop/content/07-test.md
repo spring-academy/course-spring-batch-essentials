@@ -18,7 +18,7 @@ Let's update the test accordingly.
    @Test
    void testJobExecution() throws Exception {
       // ...
-      Path billingReport = Paths.get("staging", "billing-report-2023-01.csv");
+      Path billingReport = Paths.get("staging", "billing-report-2026-01.csv");
       Assertions.assertTrue(Files.exists(billingReport));
       Assertions.assertEquals(781, Files.lines(billingReport).count());
    }

@@ -1,4 +1,4 @@
-In the previous section, you have seen how to pass `JobParameter`s declaratively on the command line interface with key/value pairs like `input.file=src/main/resources/billing-2023-02.csv`.
+In the previous section, you have seen how to pass `JobParameter`s declaratively on the command line interface with key/value pairs like `input.file=src/main/resources/billing-2026-02.csv`.
 In this section, we will update the test of our `BillingJob` to show you how to pass `JobParameter`s programmatically through the APIs provided by Spring Batch.
 
 Compared to the previous version of our `BillingJob`, in this Lab we have updated the logic of our `Job` to extract the input file from the `JobParameter`s set and print a message to the console accordingly.
@@ -22,7 +22,7 @@ We should update the test logic accordingly.
                .addString("input.file", "/some/input/file")
                .toJobParameters();
        // when
-       JobExecution jobExecution = this.jobLauncher.run(this.job, jobParameters);
+       JobExecution jobExecution = this.jobOperator.run(this.job, jobParameters);
        // then
        Assertions.assertTrue(output.getOut().contains("processing billing information from file /some/input/file"));
        Assertions.assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());

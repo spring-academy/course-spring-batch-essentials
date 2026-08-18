@@ -11,7 +11,7 @@ description: "Open testJobExecution()"
 void testJobExecution() throws Exception {
 	// given
 	JobParameters jobParameters = new JobParametersBuilder()
-			.addString("input.file", "src/main/resources/billing-2023-01.csv")
+			.addString("input.file", "src/main/resources/billing-2026-01.csv")
 			.toJobParameters();
 
 	// when
@@ -19,7 +19,7 @@ void testJobExecution() throws Exception {
 
 	// then
 	Assertions.assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());
-	Assertions.assertTrue(Files.exists(Paths.get("staging", "billing-2023-01.csv")));
+	Assertions.assertTrue(Files.exists(Paths.get("staging", "billing-2026-01.csv")));
 }
 ```
 

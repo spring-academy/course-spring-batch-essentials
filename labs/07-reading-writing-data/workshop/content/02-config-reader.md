@@ -47,7 +47,7 @@ While we can configure the reader to return Strings or byte arrays from the file
    public FlatFileItemReader<BillingData> billingDataFileReader() {
        return new FlatFileItemReaderBuilder<BillingData>()
                .name("billingDataFileReader")
-               .resource(new FileSystemResource("staging/billing-2023-01.csv"))
+               .resource(new FileSystemResource("staging/billing-2026-01.csv"))
                .delimited()
                .names("dataYear", "dataMonth", "accountId", "phoneNumber", "dataUsage", "callDuration", "smsCount")
                .targetType(BillingData.class)
@@ -63,7 +63,7 @@ While we can configure the reader to return Strings or byte arrays from the file
    import org.springframework.core.io.FileSystemResource;
    ```
 
-   In this snippet, we define a bean named `billingDataFileReader` of type `FlatFileItemReader<BillingData>`. We use the `FlatFileItemReaderBuilder` to create the reader and we specify a few properties such as the reader's name and the input file `staging/billing-2023-01.csv`.
+   In this snippet, we define a bean named `billingDataFileReader` of type `FlatFileItemReader<BillingData>`. We use the `FlatFileItemReaderBuilder` to create the reader and we specify a few properties such as the reader's name and the input file `staging/billing-2026-01.csv`.
 
    We also tell the reader that the input file is expected to be delimited (using the `.delimited()` method) and that columns are expected to be defined in a specific order, which corresponds to the list of fields (`.names(...)`) in the target type `BillingData`.
 

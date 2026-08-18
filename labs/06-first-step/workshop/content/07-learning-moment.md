@@ -10,4 +10,4 @@ You can also set a `JobParametersValidator` on the job to validate the existence
 
 In the `FilePreparationTasklet`, the `Files.copy` operation will throw an exception if the input file is not present.
 
-Try to rename or remove the `src/main/resources/billing-2023-01.csv`, then run the job and see the result.
+Try to rename or remove the `src/main/resources/billing-2026-01.csv`, then run the job and see the result.

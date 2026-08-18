@@ -13,7 +13,7 @@ description: "Open BillingJobConfiguration.java"
 @Bean
 public FlatFileItemWriter<ReportingData> billingDataFileWriter() {
 		return new FlatFileItemWriterBuilder<ReportingData>()
-			.resource(new FileSystemResource("staging/billing-report-2023-01.csv"))
+			.resource(new FileSystemResource("staging/billing-report-2026-01.csv"))
 			.name("billingDataFileWriter")
 			.delimited()
 			.names("billingData.dataYear", "billingData.dataMonth", "billingData.accountId", "billingData.phoneNumber", "billingData.dataUsage", "billingData.callDuration", "billingData.smsCount", "billingTotal")
@@ -28,7 +28,7 @@ import org.springframework.batch.infrastructure.item.file.FlatFileItemWriter;
 import org.springframework.batch.infrastructure.item.file.builder.FlatFileItemWriterBuilder;
 ```
 
-The `FlatFileItemWriter` needs to be configured with the target file, which is `staging/billing-report-2023-01.csv`. We also need to specify the format of the file (which is delimited in our case) and the fields we want to export in it. This is done using the `.delimited()` and `.names()` methods respectively.
+The `FlatFileItemWriter` needs to be configured with the target file, which is `staging/billing-report-2026-01.csv`. We also need to specify the format of the file (which is delimited in our case) and the fields we want to export in it. This is done using the `.delimited()` and `.names()` methods respectively.
 
 This item writer accepts items of type `ReportingData` that were transformed from `BillingData` in the item processor. The list of fields coming from the nested `ReportingData.billingData` are prefixed with `billingData`.
 

@@ -14,12 +14,12 @@ As we discussed in the related lesson, our Billing Job has a flaw: it is hard-co
    public FlatFileItemReader<BillingData> billingDataFileReader() {
       return new FlatFileItemReaderBuilder<BillingData>()
             .name("billingDataFileReader")
-            .resource(new FileSystemResource("staging/billing-2023-01.csv")) // <== hard-coded input file!
+            .resource(new FileSystemResource("staging/billing-2026-01.csv")) // <== hard-coded input file!
            ...
    }
    ```
 
-   As you can see, `staging/billing-2023-01.csv` will be the only input file that ever gets processed. Let's make that more flexible!
+   As you can see, `staging/billing-2026-01.csv` will be the only input file that ever gets processed. Let's make that more flexible!
 
 1. Update the file reader.
 

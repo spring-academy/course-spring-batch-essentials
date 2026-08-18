@@ -16,7 +16,7 @@ Similarly to the input file being hard-coded in our file reader, the output file
    @Bean
    public FlatFileItemWriter<ReportingData> billingDataFileWriter() {
    	return new FlatFileItemWriterBuilder<ReportingData>()
-   	.resource(new FileSystemResource("staging/billing-report-2023-01.csv")) // <== hard-coded value!
+   	.resource(new FileSystemResource("staging/billing-report-2026-01.csv")) // <== hard-coded value!
      ...
    }
    ```

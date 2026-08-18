@@ -12,14 +12,14 @@ As we've done many times before in previous labs, let's build, run, and investig
    [~/exercises] $ ./mvnw clean package -Dmaven.test.skip=true
    ```
 
-   Now, let's run the job on the `input/billing-2023-04.csv` file.
+   Now, let's run the job on the `input/billing-2026-04.csv` file.
 
-   This is a **_new file_** that represents the billing data for April 2023. It contains 200 lines of billing information. All lines are correctly formatted this time.
+   This is a **_new file_** that represents the billing data for April 2026. It contains 200 lines of billing information. All lines are correctly formatted this time.
 
    In the **Terminal**, run the following command:
 
    ```shell
-   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2023-04.csv output.file=staging/billing-report-2023-04.csv skip.file=staging/billing-data-skip-2023-04.psv data.year=2023 data.month=4
+   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2026-04.csv output.file=staging/billing-report-2026-04.csv skip.file=staging/billing-data-skip-2026-04.psv data.year=2026 data.month=4
    ```
 
    The job failed! Let's check why.

@@ -36,18 +36,18 @@ Now that second step is defined, let's add it to the sequence of steps in the jo
    Then, launch the job and pass the input file as a parameter with the following command:
 
    ```shell
-   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=src/main/resources/billing-2023-01.csv
+   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=src/main/resources/billing-2026-01.csv
    ```
 
    You should see something like this:
 
    ```shell
-   2023-07-12T12:20:51.335+02:00  INFO 98965 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=BillingJob]] launched with the following parameters: [{'input.file':'{value=src/main/resources/billing-2023-01.csv, type=class java.lang.String, identifying=true}'}]
+   2023-07-12T12:20:51.335+02:00  INFO 98965 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=BillingJob]] launched with the following parameters: [{'input.file':'{value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}'}]
    2023-07-12T12:20:51.364+02:00  INFO 98965 --- [           main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [filePreparation]
    2023-07-12T12:20:51.387+02:00  INFO 98965 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [filePreparation] executed in 22ms
    2023-07-12T12:20:51.407+02:00  INFO 98965 --- [           main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [fileIngestion]
    2023-07-12T12:20:51.620+02:00  INFO 98965 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [fileIngestion] executed in 212ms
-   2023-07-12T12:20:51.634+02:00  INFO 98965 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{'input.file':'{value=src/main/resources/billing-2023-01.csv, type=class java.lang.String, identifying=true}'}] and the following status: [COMPLETED] in 285ms
+   2023-07-12T12:20:51.634+02:00  INFO 98965 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{'input.file':'{value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}'}] and the following status: [COMPLETED] in 285ms
    ```
 
    This means the job was completed successfully. But, it's always good to verify the results are as expected.
