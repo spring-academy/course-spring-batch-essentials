@@ -23,7 +23,7 @@ spec:
         newRootPath: workshops/10-restarting-failed-jobs
       - path: .local/share/code-server
         image:
-          url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
+          url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.31.1
       - path: exercises
         git:
           url: https://github.com/spring-academy/course-spring-batch-essentials-code

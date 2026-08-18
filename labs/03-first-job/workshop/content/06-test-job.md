@@ -23,13 +23,15 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
    import org.springframework.batch.core.job.Job;
    import org.springframework.batch.core.job.JobExecution;
    import org.springframework.batch.core.job.parameters.JobParameters;
-   import org.springframework.batch.core.launch.JobLauncher;
+   import org.springframework.batch.core.launch.JobOperator;
    import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.boot.test.context.SpringBootTest;
    import org.springframework.boot.test.system.CapturedOutput;
    import org.springframework.boot.test.system.OutputCaptureExtension;
+   import org.springframework.test.context.TestPropertySource;
 
    @SpringBootTest
+   @TestPropertySource(properties = "spring.batch.job.enabled=false")
    @ExtendWith(OutputCaptureExtension.class)
    class BillingJobApplicationTests {
 
@@ -37,7 +39,7 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
    	private Job job;
 
    	@Autowired
-   	private JobLauncher jobLauncher;
+   	private JobOperator jobOperator;
 
    	@Test
    	void testJobExecution(CapturedOutput output) throws Exception {
@@ -45,7 +47,7 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 5 and th
    		JobParameters jobParameters = new JobParameters();
 
    		// when
-   		JobExecution jobExecution = this.jobLauncher.run(this.job, jobParameters);
+   		JobExecution jobExecution = this.jobOperator.run(this.job, jobParameters);
 
    		// then
    		Assertions.assertTrue(output.getOut().contains("processing billing information"));
