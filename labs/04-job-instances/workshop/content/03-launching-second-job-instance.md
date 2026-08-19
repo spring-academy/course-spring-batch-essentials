@@ -15,7 +15,9 @@ In this section, we launch a second `JobInstance` to process the billing data se
    You should see the following message in the console:
 
    ```shell
+   ...
    processing billing information from file src/main/resources/billing-2026-02.csv
+   ...
    ```
 
    This means our `BillingJob` has correctly processed the data of February 2026 and generated the report.
@@ -55,10 +57,10 @@ In this section, we launch a second `JobInstance` to process the billing data se
    You should see something like the following output:
 
    ```shell
-   job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status   | exit_code | exit_message |        last_updated
-   -----------------+---------+-----------------+----------------------------+------------+----------+-----------+-----------+--------------+----------------------------
-                  1 |       1 |               1 | 2023-05-25 10:05:45.629492 |            |          | COMPLETED | COMPLETED |              | 2023-05-25 10:05:45.642106
-                  2 |       1 |               2 | 2023-05-26 07:24:18.730961 |            |          | COMPLETED | COMPLETED |              | 2023-05-26 07:24:18.742902
+    job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status   | exit_code | exit_message |        last_updated        
+   ------------------+---------+-----------------+----------------------------+------------+----------+-----------+-----------+--------------+----------------------------
+                   1 |       1 |               1 | 2026-08-18 11:35:54.182492 |            |          | COMPLETED | COMPLETED |              | 2026-08-18 11:35:54.220197
+                   2 |       1 |               2 | 2026-08-18 11:39:43.009997 |            |          | COMPLETED | COMPLETED |              | 2026-08-18 11:39:43.083833
    (2 rows)
    ```
 

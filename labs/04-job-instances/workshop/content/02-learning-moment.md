@@ -19,9 +19,9 @@ name: Terminal
 You should see an error as follows:
 
 ```shell
-org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException: A job instance already exists and is complete
-   for parameters={'input.file':'{value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}'}.
-   If you want to run this job again, change the parameters.
+...
+org.springframework.batch.core.launch.JobInstanceAlreadyCompleteException: A job instance already exists and is complete for identifying parameters={JobParameter{name='input.file', value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}}.  If you want to run this job again, change the parameters.
+...
 ```
 
 As you can see, with no further configuration, Spring Batch prevented the same `JobInstance` from running a second time. This default design choice addresses the human errors and platform limitations we mentioned earlier.

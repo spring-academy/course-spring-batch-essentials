@@ -62,9 +62,7 @@ We should update the test logic accordingly.
    If you run the test a second time, it will fail with a similar error that we saw during the lesson when running the same completed `JobInstance` again:
 
    ```shell
-   org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException:
-    A job instance already exists and is complete for parameters={'input.file':'{value=/some/input/file, type=class java.lang.String, identifying=true}'}.
-    If you want to run this job again, change the parameters.
+   org.springframework.batch.core.launch.JobInstanceAlreadyCompleteException: A job instance already exists and is complete for identifying parameters={}.  If you want to run this job again, change the parameters.
    ```
 
    This is because the same database is used for all test runs. While this is intended in production, it could be problematic in tests as project builds won't be idempotent.
@@ -82,9 +80,9 @@ We should update the test logic accordingly.
    [~/exercises] $ scripts/drop-create-database.sh
    ```
 
-3. Going further with `JobParamter`s.
+3. Going further with `JobParameters`.
 
-   In addition to the ability of providing the name, type and value of `JobParameter`s, the `JobParametersBuilder` API also allows you to specify if the parameter is identifying or not through the third boolean parameter of the `addString` method. Here is an example:
+   In addition to the ability of providing the name, type and value of `JobParameters`, the `JobParametersBuilder` API also allows you to specify if the parameter is identifying or not through the third boolean parameter of the `addString` method. Here is an example:
 
    ```java
     JobParameters jobParameters = new JobParametersBuilder()
@@ -97,4 +95,4 @@ We should update the test logic accordingly.
 
    Note how we did not explicitly pass `true` as third parameter for `input.file` as this is the default value for `JobParameter`s in Spring Batch.
 
-   As a further exercise, you can try to launch the `BillingJob` with a mix of identifying and non-identifying `JobParameter`s and see how this impacts or not the definition and identification of `JobInstance`s.
+   As a further exercise, you can try to launch the `BillingJob` with a mix of identifying and non-identifying `JobParameters` and see how this impacts or not the definition and identification of `JobInstance`'s.

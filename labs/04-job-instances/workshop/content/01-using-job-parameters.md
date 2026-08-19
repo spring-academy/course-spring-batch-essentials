@@ -59,7 +59,9 @@ For now, all you have to understand is that we will pass these files as paramete
    You should see the following message in the console:
 
    ```shell
+   ...
    processing billing information from file src/main/resources/billing-2026-01.csv
+   ...
    ```
 
    Great! This means our `Job` is now able to get the input file from `JobParameter`s and process the data as expected. Now let's check the database to inspect the first `JobInstance` details.
@@ -100,9 +102,9 @@ For now, all you have to understand is that we will pass these files as paramete
    You should see something like the following output:
 
    ```shell
-   job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status   | exit_code | exit_message |        last_updated
-   -----------------+---------+-----------------+----------------------------+------------+----------+-----------+-----------+--------------+----------------------------
-                  1 |       1 |               1 | 2023-05-25 10:05:45.629492 |            |          | COMPLETED | COMPLETED |              | 2023-05-25 10:05:45.642106
+   job_execution_id | version | job_instance_id |        create_time         | start_time | end_time |  status   | exit_code | exit_message |        last_updated        
+   ------------------+---------+-----------------+----------------------------+------------+----------+-----------+-----------+--------------+----------------------------
+                   1 |       1 |               1 | 2026-08-18 11:35:54.182492 |            |          | COMPLETED | COMPLETED |              | 2026-08-18 11:35:54.220197
    (1 row)
    ```
 

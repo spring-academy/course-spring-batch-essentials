@@ -30,7 +30,7 @@ So let's go ahead and add the annotation and utilities to our test class.
 
 1. Autowire the test utilities.
 
-   **Note:** If you are not familiar with the concept of _Autowiring_, we recommend you read the [Dependencies](https://docs.spring.io/spring-framework/reference/6.0/core/beans/dependencies.html) section of the [Spring Framework Core Technologies reference documentation](https://docs.spring.io/spring-framework/reference/6.0/core.html). The subsection [Autowiring Collaborators](https://docs.spring.io/spring-framework/reference/6.0/core/beans/dependencies/factory-autowire.html) explains _Autowiring_ along with its limitations.
+   **Note:** If you are not familiar with the concept of _Autowiring_, we recommend you read the [Dependencies](https://docs.spring.io/spring-framework/reference/core/beans/dependencies.html) section of the [Spring Framework Core Technologies reference documentation](https://docs.spring.io/spring-framework/reference/core.html). The subsection [Autowiring Collaborators](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-autowire.html) explains _Autowiring_ along with its limitations.
 
    Update the test class and add the test utilities:
 
@@ -41,7 +41,7 @@ So let's go ahead and add the annotation and utilities to our test class.
    class BillingJobApplicationTests {
 
       @Autowired
-      private JobLauncherTestUtils jobLauncherTestUtils;
+      private JobOperatorTestUtils jobOperatorTestUtils;
 
       @Autowired
       private JobRepositoryTestUtils jobRepositoryTestUtils;
@@ -52,7 +52,7 @@ So let's go ahead and add the annotation and utilities to our test class.
    You need to add the following import statements as well:
 
    ```java
-   import org.springframework.batch.test.JobLauncherTestUtils;
+   import org.springframework.batch.test.JobLOperatorTestUtils;
    import org.springframework.batch.test.JobRepositoryTestUtils;
    ```
 
