@@ -1,7 +1,7 @@
 One of the features of Spring Boot when it comes to supporting Spring Batch is the automatic execution of any `Job` bean defined in the application context at application startup.
 So, to launch the `Job`, all you need is start the Spring Boot application.
 
-Spring Boot looks for our `Job` in the application context and runs it by using the `JobLauncher`, which is autoconfigured and ready for us to use.
+Spring Boot looks for our `Job` in the application context and runs it by using the `JobOperator`, which is autoconfigured and ready for us to use.
 
 1. Run the application.
 

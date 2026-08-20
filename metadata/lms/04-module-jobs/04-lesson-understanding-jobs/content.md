@@ -29,26 +29,29 @@ The `JobRepository` is what creates a `JobExecution` object when a `Job` is firs
 
 # Launching Jobs
 
-Launching jobs in Spring Batch is done through the `JobLauncher` concept, which is represented by the following interface:
+Launching jobs in Spring Batch is done through the `JobOperator` concept. Among the operations it exposes, the one that launches a `Job` looks like this:
 
 ```java
-public interface JobLauncher {
+public interface JobOperator {
 
-   JobExecution run(Job job, JobParameters jobParameters)
+   JobExecution start(Job job, JobParameters jobParameters)
           throws
              JobExecutionAlreadyRunningException,
              JobRestartException,
              JobInstanceAlreadyCompleteException,
-             JobParametersInvalidException;
+             InvalidJobParametersException;
+
+   // ...plus additional methods for managing running and completed jobs,
+   // such as stop, restart, and abandon
 }
 ```
 
-The `run` method is designed to launch a given `Job` with a set of `JobParameters`. We'll cover job parameters in detail in a later lesson. For now, you can think of them as a collection of key/value pairs that are passed to the `Job` at runtime. There are two important aspects to understand here:
+The `start` method is designed to launch a given `Job` with a set of `JobParameters`. We'll cover job parameters in detail in a later lesson. For now, you can think of them as a collection of key/value pairs that are passed to the `Job` at runtime. There are two important aspects to understand here:
 
-- It is expected that implementations of the `JobLauncher` interface obtain a valid `JobExecution` from the `JobRepository` and execute the `Job`.
-- The run method throws different types of exceptions. We'll cover all of these exceptions in detail during the course.
+- It is expected that implementations of the `JobOperator` interface obtain a valid `JobExecution` from the `JobRepository` and execute the `Job`.
+- The `start` method throws different types of exceptions. We'll cover all of these exceptions in detail during the course.
 
-You'll almost never have to implement the `JobLauncher` interface yourself, because Spring Batch provides an implementation that's ready to use. The following diagram shows how the `JobLauncher`, the `JobRepository` and the `Job` interact with each other.
+You'll almost never have to implement the `JobOperator` interface yourself, because Spring Batch provides an implementation that's ready to use. The following diagram shows how the `JobOperator`, the `JobRepository` and the `Job` interact with each other.
 
 ![Job-Launcher-Repository](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/job-launcher-repository.svg)
 

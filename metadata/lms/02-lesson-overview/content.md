@@ -28,13 +28,13 @@ The key concepts of the Spring Batch domain model are represented in the followi
 
 A `Job` is an entity that encapsulates an entire batch process, that runs from start to finish without interruption. A `Job` has one or more steps. A `Step` is a unit of work that can be a simple task (such as copying a file or creating an archive), or an item-oriented task (such as exporting records from a relational database table to a file), in which case, it would have an `ItemReader`, an `ItemProcessor` (which is optional), and an `ItemWriter`.
 
-A `Job` needs to be launched with a `JobLauncher`, and can be launched with a set of `JobParameter`s. Execution metadata about the currently running `Job` is stored in a `JobRepository`.
+A `Job` needs to be launched with a `JobOperator`, and can be launched with a set of `JobParameter`s. Execution metadata about the currently running `Job` is stored in a `JobRepository`.
 
 We will cover each of these key concepts in detail throughout the course.
 
 ## Batch Domain Model
 
-Spring Batch uses a robust and well-designed model for the batch processing domain. It provides a rich set of Java APIs with interfaces and classes that represent all of the key concepts of batch processing like `Job`, `Step`, `JobLauncher`, `JobRepository`, and more. We will use these APIs in this course.
+Spring Batch uses a robust and well-designed model for the batch processing domain. It provides a rich set of Java APIs with interfaces and classes that represent all of the key concepts of batch processing like `Job`, `Step`, `JobOperator`, `JobRepository`, and more. We will use these APIs in this course.
 
 While the batch domain model can be implemented with any persistence technology (like a relational database, a non-relational database, a graph database, etc), Spring Batch provides a relational model of the batch domain concepts with metadata tables that closely match the classes and interfaces in the Java API.
 
@@ -58,7 +58,7 @@ Spring Batch is designed in a modular, extensible way. The following diagram sho
 This layered architecture highlights three major high-level components:
 
 - The `Application` layer: contains the batch job and custom code written by the developers of the batch application.
-- The `Batch Core` layer: contains the core runtime classes provided by Spring Batch that are necessary to create and control batch jobs. It includes implementations for `Job` and `Step`, as well as common services like `JobLauncher` and `JobRepository`.
+- The `Batch Core` layer: contains the core runtime classes provided by Spring Batch that are necessary to create and control batch jobs. It includes implementations for `Job` and `Step`, as well as common services like `JobOperator` and `JobRepository`.
 - The `Batch Infrastructure` layer: contains common item readers and writers provided by Spring Batch, plus base services such as the repeat and retry mechanisms, which are used both by application developers and the core framework itself.
 
 As a Spring Batch developer, you typically use APIs provided by Spring Batch in the `Batch Infrastructure` and `Batch Core` modules to define your jobs and steps in the `Application` layer. Spring Batch provides a rich library of batch components that you can use out of the box (such as item readers, item writers, data partitioners, and more).

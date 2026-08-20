@@ -29,7 +29,7 @@ It is not uncommon for input data to have multiple errors. So, let's fix the fil
    ```
 
    ```shell
-   2023-08-14T18:05:45.486Z  INFO 4730 --- [           main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{'data.year':'{value=2026, type=class java.lang.String, identifying=true}','output.file':'{value=staging/billing-report-2026-03.csv, type=class java.lang.String, identifying=true}','data.month':'{value=3, type=class java.lang.String, identifying=true}','input.file':'{value=input/billing-2026-03.csv, type=class java.lang.String, identifying=true}'}] and the following status: [COMPLETED] in 191ms
+   2023-08-14T18:05:45.486Z  INFO 4730 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{'data.year':'{value=2026, type=class java.lang.String, identifying=true}','output.file':'{value=staging/billing-report-2026-03.csv, type=class java.lang.String, identifying=true}','data.month':'{value=3, type=class java.lang.String, identifying=true}','input.file':'{value=input/billing-2026-03.csv, type=class java.lang.String, identifying=true}'}] and the following status: [COMPLETED] in 191ms
    ```
 
 Next, let's inspect the metadata of Spring Batch to understand what happened with all of our job runs.

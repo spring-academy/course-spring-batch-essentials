@@ -8,16 +8,16 @@ When it comes to testing batch jobs, there are several levels of testing:
 
 - **Testing each step of the job individually:** In this scenario, a complex batch job is defined in a workflow of steps, and we test each step in isolation without launching the entire job.
 
-In both cases, there's a need to set up test data and launch a job, or a specific step. For this requirement, Spring Batch provides the `JobLauncherTestUtils` API that is designed to launch entire jobs or individual steps in tests. The `JobLauncherTestUtils` provides several utilities and methods. Here are the most important ones:
+In both cases, there's a need to set up test data and launch a job, or a specific step. For this requirement, Spring Batch provides the `JobOperatorTestUtils` API that is designed to launch entire jobs or individual steps in tests. The `JobOperatorTestUtils` provides several utilities and methods. Here are the most important ones:
 
 - **Random job parameters generation:** this feature allows you to generate a unique set of job parameters in order to have distinct job instances during tests. This is particularly useful to make your tests repeatable, and your builds idempotent. In fact, this prevents restarting the same job instances again across different tests, which would make some tests fail. These methods include:
 
-  - `JobLauncherTestUtils.getUniqueJobParameters`
-  - `JobLauncherTestUtils.getUniqueJobParametersBuilder`
+  - `JobOperatorTestUtils.getUniqueJobParameters`
+  - `JobOperatorTestUtils.getUniqueJobParametersBuilder`
 
-- **Launching an entire job from end to end:** `JobLauncherTestUtils.launchJob` allows you to launch a job in the same way you would launch it in production. You have the choice to launch it with a set of randomly generated job parameters, or with a specific set of parameters.
+- **Launching an entire job from end to end:** `JobOperatorTestUtils.startJob` allows you to launch a job in the same way you would launch it in production. You have the choice to launch it with a set of randomly generated job parameters, or with a specific set of parameters.
 
-- **Launching an individual step:** `JobLauncherTestUtils.launchStep` allows you to test a step in isolation from other steps without having to launch the enclosing job.
+- **Launching an individual step:** `JobOperatorTestUtils.startStep` allows you to test a step in isolation from other steps without having to launch the enclosing job.
 
 We'll use these utilities in the upcoming Lab for this lesson.
 
@@ -67,13 +67,13 @@ Which option you choose might depend on how you set up or tear down your tests.
 
 ## Additional Test Utilities
 
-You might need to do more in your tests than clean up the database. Luckily, `JobLauncherTestUtils` and `JobRepositoryTestUtils` are not the only test utilities that Spring Batch provides in the `spring-batch-test` module.
+You might need to do more in your tests than clean up the database. Luckily, `JobOperatorTestUtils` and `JobRepositoryTestUtils` are not the only test utilities that Spring Batch provides in the `spring-batch-test` module.
 
 Other utilities include, but not limited to, the following items:
 
 - **The `ExecutionContextTestUtils` class:** this class provides static methods to access attributes from the execution context of `JobExecution`s and `StepExecution`s.
 - **The `MetaDataInstanceFactory` class:** this class is helpful to create metadata entities, such as `JobInstance` and `JobExecution`, with the constraints defined by the batch domain model, such as the parent-child link between `JobInstance` and `JobExecution`, or the parent-child link between `JobExecution` and `StepExecution`.
-- **The `@SpringBatchTest` annotation:** This annotation registers test utilities (like `JobLauncherTestUtils`, `JobRepositoryTestUtils`, etc) as beans in the test context in order to be able to use them in tests.
+- **The `@SpringBatchTest` annotation:** This annotation registers test utilities (like `JobOperatorTestUtils`, `JobRepositoryTestUtils`, etc) as beans in the test context in order to be able to use them in tests.
 
 ### Preview: Spring Batch Scopes Test Utilities
 
