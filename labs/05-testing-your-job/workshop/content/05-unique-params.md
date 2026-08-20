@@ -1,4 +1,4 @@
-In the accompanying lesson we learned that `JobLauncherTestUtils` provides helper methods that create random job parameters to help us avoid the dreaded "Job Instance already exists and is complete" error.
+In the accompanying lesson we learned that `JobOperatorTestUtils` provides helper methods that create random job parameters to help us avoid the dreaded "Job Instance already exists and is complete" error.
 
 Let's explore this utility now.
 
@@ -16,12 +16,12 @@ Let's explore this utility now.
    @Test
    void testJobExecution(CapturedOutput output) throws Exception {
       // given
-      JobParameters jobParameters = this.jobLauncherTestUtils.getUniqueJobParametersBuilder()
+      JobParameters jobParameters = this.jobOperatorTestUtils.getUniqueJobParametersBuilder()
          .addString("input.file", "/some/input/file")
          .toJobParameters();
    ```
 
-   Note that we only changed `new JobParametersBuilder()` to `this.jobLauncherTestUtils.getUniqueJobParametersBuilder()`.
+   Note that we only changed `new JobParametersBuilder()` to `this.jobOperatorTestUtils.getUniqueJobParametersBuilder()`.
 
 1. Run the test.
 
@@ -63,7 +63,7 @@ Let's explore this utility now.
 
    We've seen in previous labs that jobs save metadata to the database.
 
-   Let's look at some of that metadata now that we are using `jobLauncherTestUtils.getUniqueJobParametersBuilder()` but _not_ `jobRepositoryTestUtils.removeJobExecutions();`
+   Let's look at some of that metadata now that we are using `jobOperatorTestUtils.getUniqueJobParametersBuilder()` but _not_ `jobRepositoryTestUtils.removeJobExecutions();`
 
    Run the following query in the **Terminal**:
 

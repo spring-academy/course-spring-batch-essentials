@@ -22,7 +22,7 @@ One of the features of `JobOperatorTestUtils` is that it automatically detects t
 
        // when
        // ** Update the following line:
-       JobExecution jobExecution = this.jobLOperatorTestUtils.startJob(jobParameters);
+       JobExecution jobExecution = this.jobOperatorTestUtils.startJob(jobParameters);
 
        // then
        Assertions.assertTrue(output.getOut().contains("processing billing information from file /some/input/file"));

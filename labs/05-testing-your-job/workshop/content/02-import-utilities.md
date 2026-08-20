@@ -1,4 +1,4 @@
-The `@SpringBatchTest` annotation registers the `JobLauncherTestUtils` and `JobRepositoryTestUtils` as Spring beans in the test context, so we can autowire them in the test class and use them as needed.
+The `@SpringBatchTest` annotation registers the `JobOperatorTestUtils` and `JobRepositoryTestUtils` as Spring beans in the test context, so we can autowire them in the test class and use them as needed.
 
 So let's go ahead and add the annotation and utilities to our test class.
 
@@ -28,6 +28,21 @@ So let's go ahead and add the annotation and utilities to our test class.
    import org.springframework.batch.test.context.SpringBatchTest;
    ```
 
+1. Disable the automatic job launch.
+
+   Spring Boot automatically tries to launch our job once on its own whenever the application starts -- that's what lets us run the job from the command line with `java -jar`. During tests, this automatic launch happens as soon as the application context starts, before any of our test code runs, and it always launches the job with no parameters.
+
+   That automatic launch isn't something we're testing here -- in the next steps we'll launch the job ourselves, explicitly, inside each test. So let's turn it off for tests by adding a property to `@SpringBootTest`:
+
+   ```java
+   @SpringBatchTest
+   @SpringBootTest(properties = "spring.batch.job.enabled=false")
+   @ExtendWith(OutputCaptureExtension.class)
+   class BillingJobApplicationTests {
+   ...
+   }
+   ```
+
 1. Autowire the test utilities.
 
    **Note:** If you are not familiar with the concept of _Autowiring_, we recommend you read the [Dependencies](https://docs.spring.io/spring-framework/reference/core/beans/dependencies.html) section of the [Spring Framework Core Technologies reference documentation](https://docs.spring.io/spring-framework/reference/core.html). The subsection [Autowiring Collaborators](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-autowire.html) explains _Autowiring_ along with its limitations.
@@ -35,7 +50,7 @@ So let's go ahead and add the annotation and utilities to our test class.
    Update the test class and add the test utilities:
 
    ```java
-   @SpringBootTest
+   @SpringBootTest(properties = "spring.batch.job.enabled=false")
    @SpringBatchTest
    @ExtendWith(OutputCaptureExtension.class)
    class BillingJobApplicationTests {
@@ -52,7 +67,7 @@ So let's go ahead and add the annotation and utilities to our test class.
    You need to add the following import statements as well:
 
    ```java
-   import org.springframework.batch.test.JobLOperatorTestUtils;
+   import org.springframework.batch.test.JobOperatorTestUtils;
    import org.springframework.batch.test.JobRepositoryTestUtils;
    ```
 
