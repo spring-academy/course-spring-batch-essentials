@@ -1,4 +1,4 @@
-We've already seen how to test Spring Batch jobs using JUnit 5 and Spring Boot test utilities in previous Labs. In this lesson, we'll focus on the test utilities provided by Spring Batch in the `spring-batch-test` module, which is designed to simplify testing batch artifacts.
+We've already seen how to test Spring Batch jobs using JUnit 6 and Spring Boot test utilities in previous Labs. In this lesson, we'll focus on the test utilities provided by Spring Batch in the `spring-batch-test` module, which is designed to simplify testing batch artifacts.
 
 ## The Different Types of Tests for Batch Jobs
 

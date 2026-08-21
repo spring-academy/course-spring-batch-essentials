@@ -1,14 +1,14 @@
-In the previous lesson, we discussed `JobInstance`s and showed how they are defined and identified by `JobParameter`s.
-In this Lab, you will learn how to pass parameters to a `Job` in order to create `JobInstance`s.
+In the previous lesson, we discussed `JobInstance`'s and showed how they are defined and identified by `JobParameter`'s.
+In this Lab, you will learn how to pass parameters to a `Job` in order to create `JobInstance`'s.
 
 Our Spring Cellular `BillingJob` is expected to process monthly billing data from a flat file.
 The input file will be used as an identifying `Job` parameter named `input.file`. Therefore, we would have a distinct `JobInstance` per month.
 
 The `src/main/resources` folder contains two flat files, `billing-2026-01.csv` and `billing-2026-02.csv` containing respectively the billing data for January 2026 and February 2026.
 You can explore the data in those files, but the content is not relevant to this Lab for the moment. We will explain the format of these files and what data they represent in a future Lab.
-For now, all you have to understand is that we will pass these files as parameters to our `BillingJob` to create distinct `JobInstance`s.
+For now, all you have to understand is that we will pass these files as parameters to our `BillingJob` to create distinct `JobInstance`'s.
 
-1. Modify the `BillingJob` implementation to get the input file from `JobParameter`s.
+1. Modify the `BillingJob` implementation to get the input file from `JobParameter`'s.
 
    In the `Editor` tab, go to the `src/main/java/example/billingjob/BillingJob.java` and update the `execute` method with the following code:
 
@@ -36,7 +36,7 @@ For now, all you have to understand is that we will pass these files as paramete
    import org.springframework.batch.core.job.parameters.JobParameters;
    ```
 
-   In this section, we get access to `JobParameter`s from the `JobExecution` reference and extract the `input.file` parameter. We then updated the message we print to the standard output to show which file the current execution is processing.
+   In this section, we get access to `JobParameter`'s from the `JobExecution` reference and extract the `input.file` parameter. We then updated the message we print to the standard output to show which file the current execution is processing.
 
 2. Launch the `BillingJob` and pass the the billing data input file as a `JobParameter`.
 
@@ -64,7 +64,7 @@ For now, all you have to understand is that we will pass these files as paramete
    ...
    ```
 
-   Great! This means our `Job` is now able to get the input file from `JobParameter`s and process the data as expected. Now let's check the database to inspect the first `JobInstance` details.
+   Great! This means our `Job` is now able to get the input file from `JobParameter`'s and process the data as expected. Now let's check the database to inspect the first `JobInstance` details.
 
 3. Inspect the Batch metadata in the database.
 
@@ -89,7 +89,7 @@ For now, all you have to understand is that we will pass these files as paramete
 
    We have a first `JobInstance` with ID `1` for the `Job` named `BilingJob`.
    The `version` column is a technical column used by Spring Batch for optimistic locking, and its usage is out of scope of this Lab.
-   The `job_key` is a hash of the identifying `JobParameter`s calculated by Spring Batch to identify `JobInstance`s.
+   The `job_key` is a hash of the identifying `JobParameter`'s calculated by Spring Batch to identify `JobInstance`'s.
 
    For more details about this matter, please refer to the external resources `Job instance identification` and `Job keys generation APIs` in the previous lesson.
 

@@ -24,7 +24,7 @@ Spring Batch integrates seamlessly with other Spring technologies, making it an 
 
 The key concepts of the Spring Batch domain model are represented in the following diagram:
 
-![Batch domain Model](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/refs/heads/spring-batch-update/courses/course-spring-batch-essentials/overview-lesson-domain-model.svg)
+![Batch domain Model](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/refs/heads/main/courses/course-spring-batch-essentials/overview-lesson-domain-model-6.svg)
 
 A `Job` is an entity that encapsulates an entire batch process, that runs from start to finish without interruption. A `Job` has one or more steps. A `Step` is a unit of work that can be a simple task (such as copying a file or creating an archive), or an item-oriented task (such as exporting records from a relational database table to a file), in which case, it would have an `ItemReader`, an `ItemProcessor` (which is optional), and an `ItemWriter`.
 

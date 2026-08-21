@@ -36,13 +36,13 @@ The most commonly used `Step` types are the following:
 
 The following diagram explains the hierarchy and relation between these different types of `Steps`.
 
-![Steps and Tasklets](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/bcbed634eed342346d30d61c0cfd8a30a55036a3/courses/course-spring-batch-essentials/step-and-tasklet.svg "Steps and Tasklets")
+![Steps and Tasklets](https://github.com/spring-academy/spring-academy-assets/blob/main/courses/course-spring-batch-essentials/step-and-tasklet.svg)
 
 In this course, we'll focus on the `TaskletStep` type.
 
 ## The `TaskletStep`
 
-The [`TaskletStep`](https://docs.spring.io/spring-batch/docs/5.0.4/reference/html/step.html#taskletStep "Spring Batch Tasklet Step") is an implementation of the `Step` interface based on the concept of a `Tasklet`. A `Tasklet` represents a unit of work that the Step should do when invoked. The `Tasklet` interface is defined as follows:
+The [`TaskletStep`](https://docs.spring.io/spring-batch/reference/step/tasklet.html) is an implementation of the `Step` interface based on the concept of a `Tasklet`. A `Tasklet` represents a unit of work that the Step should do when invoked. The `Tasklet` interface is defined as follows:
 
 ```java
 @FunctionalInterface
