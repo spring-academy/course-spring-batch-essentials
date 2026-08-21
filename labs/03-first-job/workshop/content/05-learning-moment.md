@@ -27,7 +27,7 @@ public void execute(JobExecution execution) {
 
 Give this a try:
 
-1. Clean up the database using the `scripts/drop-create-database.sh` script as shown above.
+1. Clean up the database using the `scripts/drop-create-database.sh` script as shown previously.
 2. Re-run the `Job` with the intentionally-failing business logic.
 
 In addition to the `status` of `COMPLETED` status, you should also an `exit_code` of `FAILED` status in the database as well as the error message in the `exist_message` column.

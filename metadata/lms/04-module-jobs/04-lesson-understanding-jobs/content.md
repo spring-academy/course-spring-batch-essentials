@@ -53,7 +53,7 @@ The `start` method is designed to launch a given `Job` with a set of `JobParamet
 
 You'll almost never have to implement the `JobOperator` interface yourself, because Spring Batch provides an implementation that's ready to use. The following diagram shows how the `JobOperator`, the `JobRepository` and the `Job` interact with each other.
 
-![Job-Launcher-Repository](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/job-launcher-repository.svg)
+![Job-Launcher-Repository](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/refs/heads/spring-batch-update/courses/course-spring-batch-essentials/job-launcher-repository.svg)
 
 Batch jobs are typically launched in one of two ways:
 

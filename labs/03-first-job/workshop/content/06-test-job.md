@@ -79,7 +79,7 @@ For this lesson, we see how to test a Spring Batch `Job` by using JUnit 6 and th
      }
      ```
 
-   - Finally we add `@TestPropertySource(properties = "spring.batch.job.enabled=false")` to disable the automatic execution of Spring Batch jobs when the test application context boots up. This prevents the automatic creation of a job instance before we are able to manually launch our test.
+   - Finally we add `@TestPropertySource(properties = "spring.batch.job.enabled=false")` to disable the automatic execution of Spring Batch jobs when the test application context boots up. This prevents the automatic creation of a job instance before the test is launched.
   
       ```java
       @SpringBootTest
