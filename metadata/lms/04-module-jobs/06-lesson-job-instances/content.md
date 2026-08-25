@@ -53,7 +53,7 @@ In the example of the `EndOfDay` `Job`, the parameters can be defined in the fol
 
 | Job parameter | Identifying? | Example    |
 | ------------- | ------------ | ---------- |
-| schedule.date | Yes          | 2023-01-01 |
+| schedule.date | Yes          | 2026-01-01 |
 | file.format   | No           | csv        |
 
 Now the question is: Why is this important, and how is it used in Spring Batch? Identifying `JobParameter`s play a crucial role in the case of failure. In a production environment, where hundreds of `Job` instances are running, and one of them fails, we need a way to identify which instance has failed. This is where identifying `Job` parameters are key. When a `JobExecution` for a given `JobInstance` fails, launching the same job with the _same_ set of identifying `JobParameter`s will create a new `JobExecution` (ie a new attempt) for the _same_ `JobInstance`.

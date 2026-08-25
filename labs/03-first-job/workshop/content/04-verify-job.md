@@ -20,8 +20,6 @@ Let's check the `Job` status in the database.
    ------------------+---------+-----------------+----------------------------+------------+----------+----------+-----------+--------------+--------------
                    1 |       0 |               1 | 2026-08-18 10:49:18.764691 |            |          | STARTING | UNKNOWN   |              | 
    (1 row)
-
-   [~/exercises] $
    ```
 
    Spring Batch has correctly recorded the execution of the `Job` in the database, but the `Job`'s status is `STARTING` and its exit code is `UNKNOWN`.
