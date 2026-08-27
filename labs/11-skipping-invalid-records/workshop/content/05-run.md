@@ -24,7 +24,7 @@ Let's see if our fault-tolerant job is truly fault-tolerant!
 
    ```shell
    ...
-   XXXX-08-16T00:43:39.917Z  INFO 2834 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{'data.year':'{value=2026, type=class java.lang.String, identifying=true}','output.file':'{value=staging/billing-report-2026-03.csv, type=class java.lang.String, identifying=true}','data.month':'{value=3, type=class java.lang.String, identifying=true}','skip.file':'{value=staging/billing-data-skip-2026-03.psv, type=class java.lang.String, identifying=true}','input.file':'{value=input/billing-2026-03.csv, type=class java.lang.String, identifying=true}'}] and the following status: [COMPLETED] in 285ms
+   2026-08-27T12:31:58.562Z  INFO 2797 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{JobParameter{name='data.year', value=2026, type=class java.lang.String, identifying=true},JobParameter{name='output.file', value=staging/billing-report-2026-03.csv, type=class java.lang.String, identifying=true},JobParameter{name='data.month', value=3, type=class java.lang.String, identifying=true},JobParameter{name='skip.file', value=staging/billing-data-skip-2026-03.psv, type=class java.lang.String, identifying=true},JobParameter{name='input.file', value=input/billing-2026-03.csv, type=class java.lang.String, identifying=true}}] and the following status: [COMPLETED] in 801ms
    ```
 
    Let's check it out!

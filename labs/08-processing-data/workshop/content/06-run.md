@@ -22,18 +22,18 @@ We are now finally ready to run the entire job and check the generated billing r
 
    ```shell
    2026-08-27T11:01:09.814Z  INFO 5221 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] launched with the following parameters: [{JobParameter{name='input.file', value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}}]
-2026-08-27T11:01:09.882Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [filePreparation]
-2026-08-27T11:01:09.908Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [filePreparation] executed in 31ms
-2026-08-27T11:01:09.949Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [fileIngestion]
-2026-08-27T11:01:10.448Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [fileIngestion] executed in 505ms
-2026-08-27T11:01:10.486Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [reportGeneration]
-2026-08-27T11:01:10.838Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [reportGeneration] executed in 355ms
-2026-08-27T11:01:10.875Z  INFO 5221 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{JobParameter{name='input.file', value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}}] and the following status: [COMPLETED] in 1s36ms
+   2026-08-27T11:01:09.882Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [filePreparation]
+   2026-08-27T11:01:09.908Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [filePreparation] executed in 31ms
+   2026-08-27T11:01:09.949Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [fileIngestion]
+   2026-08-27T11:01:10.448Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [fileIngestion] executed in 505ms
+   2026-08-27T11:01:10.486Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [reportGeneration]
+   2026-08-27T11:01:10.838Z  INFO 5221 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [reportGeneration] executed in 355ms
+   2026-08-27T11:01:10.875Z  INFO 5221 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{JobParameter{name='input.file', value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}}] and the following status: [COMPLETED] in 1s36ms
    ```
 
    Note how all three steps have been completed successfully. This means we should find the generated report in the `staging` directory. Let's check it out!
 
-1. Check out the report.
+2. Check out the report.
 
    In the Editor, open the `staging` directory and inspect its content. A new file named `billing-report-2026-01.csv` should be generated in that folder.
 

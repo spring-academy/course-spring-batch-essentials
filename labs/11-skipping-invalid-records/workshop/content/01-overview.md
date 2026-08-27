@@ -2,7 +2,7 @@ In the previous Lab, you have seen that whenever an invalid line is encountered 
 
 In this Lab, you will learn how to configure Spring Batch to skip invalid items and write them to a separate file for later analysis.
 
-We will use the same problematic file, `input/billing-data-2026-03.csv`, as input to the job. Remember, that file contains two invalid lines: 226 and 408.
+We will use the same problematic file, `input/billing-data-2026-03.csv`, as an input to the job. Remember, that file contains two invalid lines: 226 and 408.
 
 However, let's decide that the job should not fail any more and that the invalid lines should be written to a new file named `staging/billing-data-skip-2026-03.psv` so that we can audit the problematic records. This file is a Pipe Separated Values file and should contain invalid lines in the following format:
 

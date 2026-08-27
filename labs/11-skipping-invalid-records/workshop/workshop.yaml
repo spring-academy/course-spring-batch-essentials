@@ -1,4 +1,4 @@
-name: Skipping invalid records
+name: Skipping Invalid Records
 modules:
   activate:
     - 01-overview

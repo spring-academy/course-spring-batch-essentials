@@ -1,4 +1,4 @@
-name: Skipping invalid records
+name: Retrying Processing Errors
 modules:
   activate:
     - 01-overview

@@ -4,7 +4,7 @@ For this reason, Spring Batch provides a retry feature that lets you retry opera
 
 ## Retrying Transient Errors
 
-The retry feature in Spring Batch is based on the [Spring Retry](https://github.com/spring-projects/spring-retry) library. Spring Retry was historically part of Spring Batch itself but was extracted as a separate library, which is now used by many other projects in the Spring portfolio.
+The retry feature in Spring Batch is built directly on Spring Framework's own retry support (the `org.springframework.core.retry` package), introduced in Spring Framework 7. Previously, Spring Batch relied on the standalone [Spring Retry](https://github.com/spring-projects/spring-retry) library for this feature, but that library is no longer actively maintained, so its functionality has now been absorbed into Spring Framework itself.
 
 Similar to the skip feature, the retry feature is designed for chunk-oriented steps, specifically for the processing and writing phases. The reading phase is _not_ retryable.
 
@@ -40,42 +40,67 @@ We'll implement a retry feature in the Lab of this lesson.
 
 ## Handling Retry Attempts
 
-For auditing purposes, Spring Batch provides a way to register a `RetryListener` in the step in order to plug in custom code during retry attempts: `onError`, `onSuccess`, and so on.
+For auditing purposes, Spring Batch provides a way to register a `RetryListener` in the step in order to plug in custom code around retry attempts: `beforeRetry`, `onRetrySuccess`, `onRetryFailure`, and so on.
 
-The `RetryListener` API is part of Spring Retry and is defined as follows:
+The `RetryListener` API is part of Spring Framework's `org.springframework.core.retry` package and is defined as follows:
 
 ```java
 public interface RetryListener {
 
-   default <T, E extends Throwable> void onSuccess(
-          RetryContext context,
-          RetryCallback<T, E> callback,
-          T result) {
+   default void beforeRetry(RetryPolicy retryPolicy, Retryable<?> retryable, RetryState retryState) {
    }
 
-   default <T, E extends Throwable> void onError(
-          RetryContext context,
-          RetryCallback<T, E> callback,
-	   Throwable throwable) {
+   default void onRetrySuccess(RetryPolicy retryPolicy, Retryable<?> retryable, Object result) {
    }
+
+   default void onRetryFailure(RetryPolicy retryPolicy, Retryable<?> retryable, Throwable throwable) {
+   }
+
+   default void onRetryPolicyExhaustion(RetryPolicy retryPolicy, Retryable<?> retryable, RetryException retryException) {
+   }
+
+   // plus onRetryableExecution, onRetryPolicyInterruption, and onRetryPolicyTimeout
 }
 ```
 
-This interface is an extension point that gives the developer a way to execute custom code during retry attempts (that is, during failed attempts), by implementing the `onError` method. You can execute custom code upon successful attempts by implementing the `onSuccess` method.
+This interface is an extension point that gives the developer a way to execute custom code before a retry attempt (`beforeRetry`), after a successful attempt (`onRetrySuccess`), after a failed attempt (`onRetryFailure`), or once the retry policy gives up entirely (`onRetryPolicyExhaustion`). Every method has a default no-op implementation, so you only need to override the ones you actually care about.
 
 Typical examples of using this API are logging and reporting retry operations. See the "Links" section for more details about this API.
 
-Once you've implemented the `RetryListener`, you can register it in the step by using the `ChunkOrientedStepBuilder.listener(RetryListener)` method.
+Once you've implemented the `RetryListener`, you can register it in the step by using the `ChunkOrientedStepBuilder.retryListener(RetryListener)` method.
 
 ## Custom Retry Policies
 
-Similar to the `SkipPolicy` API for custom skip policies, Spring Batch provides a way to use custom retry policies by implementing the `RetryPolicy` interface. The `RetryPolicy` interface is part of Spring Retry and is defined as follows:
+Similar to the `SkipPolicy` API for custom skip policies, Spring Batch lets you define custom retry policies by implementing the `RetryPolicy` interface. The `RetryPolicy` interface is part of Spring Framework's `org.springframework.core.retry` package and is defined as follows:
 
 ```java
-public interface RetryPolicy extends Serializable {
-   boolean canRetry(RetryContext context);
-   void registerThrowable(RetryContext context, Throwable throwable);
+public interface RetryPolicy {
+
+   boolean shouldRetry(Throwable throwable);
+
+   default Duration getTimeout() {
+      // no timeout, by default
+   }
+
+   default BackOff getBackOff() {
+      // a sensible default BackOff
+   }
+
 }
 ```
 
-This interface is an extension point that lets the user utilize custom rules for retrying items. Spring Retry already provides several ready-to-use implementations of this interface, including `MaxAttemptsRetryPolicy`, `CircuitBreakerRetryPolicy`, and others. See the "Links" section for more details about these implementations.
+This interface is an extension point that lets you decide, based on the `Throwable` that was thrown, whether an operation should be retried (`shouldRetry`), how long to keep retrying before giving up altogether (`getTimeout`), and how long to wait between attempts (`getBackOff`, using Spring's `BackOff` abstraction, such as a `FixedBackOff` or an `ExponentialBackOff`).
+
+Rather than implementing this interface from scratch, you'll typically build one using the fluent `RetryPolicy.builder()` API:
+
+```java
+RetryPolicy retryPolicy = RetryPolicy.builder()
+      .includes(PricingException.class)
+      .maxRetries(100)
+      .delay(Duration.ofSeconds(1))
+      .multiplier(2.0)
+      .maxDelay(Duration.ofSeconds(30))
+      .build();
+```
+
+Once built, a `RetryPolicy` can be registered directly on a step with `ChunkOrientedStepBuilder.retryPolicy(RetryPolicy)`, giving you full control over backoff and timeout behavior beyond what the simpler `.retry()` and `.retryLimit()` methods offer.
