@@ -9,20 +9,20 @@
     "manualCompletion": true,
     "links": [
       {
-        "text": "Spring Retry",
-        "url": "https://github.com/spring-projects/spring-retry"
+        "text": "Spring Resilience Features",
+        "url": "https://docs.spring.io/spring-framework/reference/core/resilience.html"
       },
       {
         "text": "RetryListener",
-        "url": "https://www.javadoc.io/doc/org.springframework.retry/spring-retry/latest/org/springframework/retry/RetryListener.html"
+        "url": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/retry/RetryListener.html"
       },
       {
         "text": "RetryPolicy",
-        "url": "https://www.javadoc.io/doc/org.springframework.retry/spring-retry/latest/org/springframework/retry/RetryPolicy.html"
+        "url": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/retry/RetryPolicy.html"
       },
       {
-        "text": "Built-in retry policies in Spring Retry",
-        "url": "https://www.javadoc.io/doc/org.springframework.retry/spring-retry/latest/org/springframework/retry/policy/package-summary.html"
+        "text": "Built-in retry policies",
+        "url": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/retry/RetryPolicy.html"
       }
     ]
   }

@@ -53,7 +53,7 @@ Pricing exceptions are transient. In fact, retrying a failed pricing operation m
    Now run the job again:
 
    ```shell
-   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2026-04.csv output.file=staging/billing-report-2026-04.csv skip.file=staging/billing-data-skip-2026-04.psv data.year=2026 data.month=4
+   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2026-04.csv output.file=staging/billing-report-2026-04.csv skip.file=staging/billing-data-skip-2026-04.csv data.year=2026 data.month=4
    ```
 
    The job should now succeed!
