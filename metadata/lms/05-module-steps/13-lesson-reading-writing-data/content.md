@@ -139,7 +139,7 @@ Now that we've explained how to read and write data in Spring Batch using item r
 
 A chunk-oriented step in Spring Batch is a `TaskletStep` configured with a specific `Tasklet` type, the `ChunkOrientedTasklet`. This `Tasklet` is what implements the chunk-oriented processing model (explained above) using an item reader and an item writer.
 
-Similar to configuring a `TaskletStep` with a custom tasklet, configuring a chunk-oriented tasklet is also done through the `StepBuilder` API, except we'll need to call the `chunk` method instead of the `tasklet` method.
+Unlike a `TaskletStep` with a custom tasklet, which is configured through the `StepBuilder` API's `tasklet` method, a chunk-oriented step is configured through a dedicated `ChunkOrientedStepBuilder` API.
 
 So let's see how to use this API to create the second step of our job, the file ingestion step.
 
@@ -155,19 +155,20 @@ public Step ingestFile(
               FlatFileItemReader<BillingData> billingDataFileReader,
               JdbcBatchItemWriter<BillingData> billingDataTableWriter) {
 
-    return new StepBuilder("fileIngestion", jobRepository)
-            .<BillingData, BillingData>chunk(100, transactionManager)
+    return new ChunkOrientedStepBuilder<BillingData, BillingData>("fileIngestion", jobRepository, 100)
             .reader(billingDataFileReader)
             .writer(billingDataTableWriter)
+            .transactionManager(transactionManager)
             .build();
 }
 ```
 
-As we've seen before, we'll need to specify the step name and the job repository. This is common for all step types. Since we're creating a chunk-oriented `TaskletStep`, we'll need to provide two parameters:
+As we've seen before, we'll need to specify the step name and the job repository. This is common for all step types. Since we're creating a chunk-oriented step, the `ChunkOrientedStepBuilder` constructor also requires a third argument:
 
-- The first parameter is the chunk-size, or the commit-interval. In this case, it is set to 100, which means Spring Batch will read and write 100 items as a unit in each transaction.
-- The second parameter is a reference to a `PlatformTransactionManager` to manage the transactions of the tasklet. Remember, each call the `Tasklet.execute` is done within the scope of a transaction.
+- The chunk-size, or the commit-interval. In this case, it is set to 100, which means Spring Batch will read and write 100 items as a unit in each transaction.
 
-Finally, the `StepBuilder.chunk` API guides the user to further configure the chunk-oriented tasklet, by specifying the item reader and writer to use through the `reader` and `writer` methods respectively.
+The transaction manager is set separately, via the `.transactionManager()` method, to manage the transactions of the chunk-oriented tasklet. Remember, each call the `Tasklet.execute` is done within the scope of a transaction.
+
+Finally, the `ChunkOrientedStepBuilder` API guides the user to further configure the chunk-oriented tasklet, by specifying the item reader and writer to use through the `reader` and `writer` methods respectively.
 
 That's all it takes to configure a chunk-oriented tasklet in Spring Batch. In the next Lab, we'll configure this step, and add it as a second step to our job.

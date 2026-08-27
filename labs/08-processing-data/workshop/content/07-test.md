@@ -37,7 +37,7 @@ Let's update the test accordingly.
    ```
 
    ```shell
-   [~/exercises] $ ./mvnw clean test -Dspring.batch.job.enabled=false
+   [~/exercises] $ ./mvnw clean test
    ```
 
    The test should pass, which means the third step and the entire job is doing what it is supposed to do. Congratulations!

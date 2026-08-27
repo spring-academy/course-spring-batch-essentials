@@ -48,13 +48,13 @@ Specifically, let's look at the data we have for job executions and step executi
    You should see the following output:
 
    ```shell
-    step_execution_id | job_execution_id |    step_name     |  status   | read_count | write_count | commit_count | rollback_count
-   -------------------+------------------+------------------+-----------+------------+-------------+--------------+----------------
-                    1 |                1 | filePreparation  | COMPLETED |          0 |           0 |            1 |              0
-                    2 |                1 | fileIngestion    | FAILED    |        225 |         200 |            2 |              1
-                    3 |                2 | fileIngestion    | FAILED    |        207 |         200 |            2 |              1
-                    4 |                3 | fileIngestion    | COMPLETED |        100 |         100 |            2 |              0
-                    5 |                3 | reportGeneration | COMPLETED |        500 |         388 |            6 |              0
+    step_execution_id | job_execution_id |    step_name     |  status   | read_count | write_count | commit_count | rollback_count 
+-------------------+------------------+------------------+-----------+------------+-------------+--------------+----------------
+                 1 |                1 | filePreparation  | COMPLETED |          0 |           0 |            1 |              0
+                 2 |                1 | fileIngestion    | FAILED    |        225 |         200 |            2 |              1
+                 5 |                3 | reportGeneration | COMPLETED |        500 |         388 |            5 |              0
+                 3 |                2 | fileIngestion    | FAILED    |        207 |         200 |            2 |              1
+                 4 |                3 | fileIngestion    | COMPLETED |        100 |         100 |            1 |              0
    ```
 
    This output shows several keys points:

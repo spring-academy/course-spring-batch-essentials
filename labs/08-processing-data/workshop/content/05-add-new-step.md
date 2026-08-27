@@ -15,11 +15,11 @@ The report generation step is a chunk-oriented step, similar to the first step o
                               ItemReader<BillingData> billingDataTableReader,
                               ItemProcessor<BillingData, ReportingData> billingDataProcessor,
                               ItemWriter<ReportingData> billingDataFileWriter) {
-       return new StepBuilder("reportGeneration", jobRepository)
-               .<BillingData, ReportingData>chunk(100, transactionManager)
+       return new ChunkOrientedStepBuilder<BillingData, ReportingData>("reportGeneration", jobRepository, 100)
                .reader(billingDataTableReader)
                .processor(billingDataProcessor)
                .writer(billingDataFileWriter)
+               .transactionManager(transactionManager)
                .build();
    }
    ```
@@ -36,7 +36,7 @@ The report generation step is a chunk-oriented step, similar to the first step o
 
    We have declared a bean named `step3` of type `Step`, which represents the final step, `reportGeneration`.
 
-   Similar to the previous chunk-oriented step, `step2` named `fileIngestion`, we need to pass a reference to the job repository and transaction manager. The chunk size is also 100, which is a good starting value.
+   Similar to the previous chunk-oriented step, `step2` named `fileIngestion`, the job repository, step name, and chunk size are passed directly to the `ChunkOrientedStepBuilder` constructor -- the chunk size is again 100, which is a good starting value. The transaction manager is set separately using the `.transactionManager(...)` method.
 
    The item reader, processor and writer are also passed as parameters to the bean definition method so they are autowired by Spring from the previous bean definitions.
 
@@ -54,7 +54,7 @@ The report generation step is a chunk-oriented step, similar to the first step o
 
      This is our fancy new `ItemProcessor` bean that not only filters out bills less than $150, but also enriches the data with the actual spending amount.
 
-     There is a big difference compared to the `fileIngestion` in `step2`, which did not have a `processor` phase. While the `fileIngestion` step did not change the item type (since it did not use an item processor), notice how the item type changes here: `<BillingData, ReportingData>chunk(...)`. In fact, this final step _changes the item type with an item processor_, hence this notation.
+     There is a big difference compared to the `fileIngestion` in `step2`, which did not have a `processor` phase. While the `fileIngestion` step did not change the item type (since it did not use an item processor), notice how the item type changes here: `ChunkOrientedStepBuilder<BillingData, ReportingData>`. In fact, this final step _changes the item type with an item processor_, hence these generic type parameters.
 
    - ```java
      .writer(billingDataFileWriter)

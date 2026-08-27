@@ -16,7 +16,7 @@ To activate this feature, you'll need to define a "fault-tolerant" step.
 
 ### Fault-Tolerant Step
 
-As mentioned in previous lessons, the main entry point to create steps is the `StepBuilder` API. Creating a fault-tolerant step is done by calling the `faultTolerant()` method on the `StepBuilder`.
+As mentioned in previous lessons, chunk-oriented steps are created with the `ChunkOrientedStepBuilder` API. Creating a fault-tolerant step is done by calling the `faultTolerant()` method on that same builder.
 
 Here's an example:
 
@@ -25,10 +25,10 @@ Here's an example:
 public Step step(
    JobRepository jobRepository, JdbcTransactionManager transactionManager,
    ItemReader<String> itemReader, ItemWriter<String> itemWriter) {
-   return new StepBuilder("myStep", jobRepository)
-		.<String, String>chunk(100, transactionManager)
+   return new ChunkOrientedStepBuilder<String, String>("myStep", jobRepository, 100)
 		.reader(itemReader)
 		.writer(itemWriter)
+		.transactionManager(transactionManager)
 		.faultTolerant()
 		.skip(FlatFileParseException.class)
 		.skipLimit(5)
@@ -36,7 +36,7 @@ public Step step(
 }
 ```
 
-This method returns a `FaultTolerantStepBuilder` that allows you to define fault-tolerance features (skip and retry). In this case, we're defining a skip policy.
+Calling `faultTolerant()` on the `ChunkOrientedStepBuilder` unlocks its fault-tolerance features (skip and retry). In this case, we're defining a skip policy.
 
 The `skip()` method defines which exception should cause the current item to be skipped. In this example, if a `FlatFileParseException` occurs (most likely during the read operation because the current line cannot be parsed), the current line in the flat-file will be skipped.
 
@@ -70,7 +70,7 @@ public interface SkipListener<T, S> extends StepListener {
 }
 ```
 
-This interface provides 3 methods to implement the logic of what to do if an item is skipped during the `read`, `process` or `write` operation. Once implemented, the `SkipListener` can be registered in the step using the `FaultTolerantStepBuilder.listener(SkipListener)` API.
+This interface provides 3 methods to implement the logic of what to do if an item is skipped during the `read`, `process` or `write` operation. Once implemented, the `SkipListener` can be registered in the step using the `ChunkOrientedStepBuilder.listener(SkipListener)` API.
 
 We'll see an example of how to implement this interface and use it in the Lab for this Lesson.
 
@@ -93,4 +93,4 @@ This is a functional interface with a single method `shouldSkip` that's designed
 
 A typical example of a "skippable" exception is the `FlatFileParseException` that we saw earlier, which provides the current item along with the line number in the input file.
 
-Once the custom `SkipPolicy` is implemented, it can be registered in the step using the `FaultTolerantStepBuilder.skipPolicy(SkipPolicy)` API.
+Once the custom `SkipPolicy` is implemented, it can be registered in the step using the `ChunkOrientedStepBuilder.skipPolicy(SkipPolicy)` API.

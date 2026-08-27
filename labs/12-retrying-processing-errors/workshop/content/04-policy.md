@@ -19,10 +19,10 @@ The file ingestion step is the step where billing data is parsed from the input 
           ItemReader<BillingData> billingDataFileReader,
           ItemWriter<BillingData> billingDataTableWriter,
           BillingDataSkipListener skipListener) {
-   	return new StepBuilder("fileIngestion", jobRepository)
-   			.<BillingData, BillingData>chunk(100, transactionManager)
+   	return new ChunkOrientedStepBuilder<BillingData, BillingData>("fileIngestion", jobRepository, 100)
    			.reader(billingDataFileReader)
    			.writer(billingDataTableWriter)
+   			.transactionManager(transactionManager)
    			.faultTolerant()
    			.skip(FlatFileParseException.class)
    			.skipLimit(10)

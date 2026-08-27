@@ -29,7 +29,7 @@ The last thing we have to do is to update the test of our job to accept the new 
    ```
 
    ```shell
-   [~/exercises] $ ./mvnw clean test -Dspring.batch.job.enabled=false
+   [~/exercises] $ ./mvnw clean test
    ```
 
    The test should pass, which means our step-scoped components are correctly configured dynamically at runtime with the new job parameters!

@@ -1,4 +1,4 @@
-name: Testing your Job
+name: Batch Scoped Components
 modules:
   activate:
     - 01-overview

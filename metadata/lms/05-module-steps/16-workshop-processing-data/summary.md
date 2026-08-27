@@ -1,1 +1,1 @@
-In this Lab, you'll implement a chunk-oriented step that reads billing data from the input file and writes it into a relational database table.
+In this Lab, you'll implement the last step of the Billing Job that processes the billing data and generates the billing report.

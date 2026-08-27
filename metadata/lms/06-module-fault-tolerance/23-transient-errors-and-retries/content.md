@@ -8,7 +8,7 @@ The retry feature in Spring Batch is based on the [Spring Retry](https://github.
 
 Similar to the skip feature, the retry feature is designed for chunk-oriented steps, specifically for the processing and writing phases. The reading phase is _not_ retryable.
 
-To activate the retry feature, you'll need to define a "fault-tolerant" step. As mentioned in previous lessons, the main entry point to create steps is the `StepBuilder` API, and creating a fault tolerant step is done by calling the `faultTolerant()` method.
+To activate the retry feature, you'll need to define a "fault-tolerant" step. As mentioned in previous lessons, chunk-oriented steps are created with the `ChunkOrientedStepBuilder` API, and creating a fault tolerant step is done by calling the `faultTolerant()` method on that same builder.
 
 Here's an example:
 
@@ -17,10 +17,10 @@ Here's an example:
 public Step step(
    JobRepository jobRepository, JdbcTransactionManager transactionManager,
    ItemReader<String> itemReader, ItemWriter<String> itemWriter) {
-   return new StepBuilder("myStep", jobRepository)
-		.<String, String>chunk(100, transactionManager)
+   return new ChunkOrientedStepBuilder<String, String>("myStep", jobRepository, 100)
 		.reader(itemReader)
 		.writer(itemWriter)
+		.transactionManager(transactionManager)
 		.faultTolerant()
 		.retry(TransientException.class)
 		.retryLimit(5)
@@ -28,7 +28,7 @@ public Step step(
 }
 ```
 
-In this snippet, the chunk-oriented step, `myStep`, is declared as a fault-tolerant step, thanks to the call to the `.faultTolerant()` method. This method returns a `FaultTolerantStepBuilder` that allows you to define the fault-tolerance features (skip and retry).
+In this snippet, the chunk-oriented step, `myStep`, is declared as a fault-tolerant step, thanks to the call to the `.faultTolerant()` method. Calling `faultTolerant()` on the `ChunkOrientedStepBuilder` unlocks its fault-tolerance features (skip and retry).
 
 In this case, we're defining a retry policy as follows:
 
@@ -65,7 +65,7 @@ This interface is an extension point that gives the developer a way to execute c
 
 Typical examples of using this API are logging and reporting retry operations. See the "Links" section for more details about this API.
 
-Once you've implemented the `RetryListener`, you can register it in the step by using the `FaultTolerantStepBuilder.listener(RetryListener)` method.
+Once you've implemented the `RetryListener`, you can register it in the step by using the `ChunkOrientedStepBuilder.listener(RetryListener)` method.
 
 ## Custom Retry Policies
 

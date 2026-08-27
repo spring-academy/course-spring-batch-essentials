@@ -16,11 +16,11 @@ Pricing exceptions are transient. In fact, retrying a failed pricing operation m
    						   ItemReader<BillingData> billingDataTableReader,
    						   ItemProcessor<BillingData, ReportingData> billingDataProcessor,
    						   ItemWriter<ReportingData> billingDataFileWriter) {
-   	return new StepBuilder("reportGeneration", jobRepository)
-   			.<BillingData, ReportingData>chunk(100, transactionManager)
+   	return new ChunkOrientedStepBuilder<BillingData, ReportingData>("reportGeneration", jobRepository, 100)
    			.reader(billingDataTableReader)
    			.processor(billingDataProcessor)
    			.writer(billingDataFileWriter)
+   			.transactionManager(transactionManager)
    			.faultTolerant()
    			.retry(PricingException.class)
    			.retryLimit(100)
@@ -30,7 +30,7 @@ Pricing exceptions are transient. In fact, retrying a failed pricing operation m
 
    That's a lot of code! Let's understand the changes:
 
-   - First, we have made the report generation step tolerant to faults by calling the `StepBuilder.faultTolerant()` method.
+   - First, we have made the report generation step tolerant to faults by calling the `ChunkOrientedStepBuilder.faultTolerant()` method.
    - After that, we declared the `PricingException` as a retryable exception using the `.retry(PricingException.class)` call.
    - Finally, we defined a retry limit of 100
 
