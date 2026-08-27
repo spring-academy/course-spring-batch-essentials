@@ -15,7 +15,7 @@ void testJobExecution() throws Exception {
 			.toJobParameters();
 
 	// when
-	JobExecution jobExecution = this.jobLauncherTestUtils.launchJob(jobParameters);
+	JobExecution jobExecution = this.jobOperatorTestUtils.startJob(jobParameters);
 
 	// then
 	Assertions.assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());
@@ -43,11 +43,7 @@ name: Terminal
 ```
 
 ```shell
-[~/exercises] $ ./mvnw clean test -Dspring.batch.job.enabled=false
+[~/exercises] $ ./mvnw clean test
 ```
 
 The test should pass, which means the step is doing what it is supposed to do.
-
-The property `-Dspring.batch.job.enabled=false` disables the automatic execution of the job by Spring Boot. Without this property,
-the job will be executed twice: a first time at the application's startup, and a second time during the test. This is obviously
-not desired when running tests, hence the use of that property.

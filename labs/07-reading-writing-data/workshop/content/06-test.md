@@ -53,7 +53,7 @@ Now that the job has a second step that inserts data into the `BILLING_DATA` tab
    ```
 
    ```shell
-   [~/exercises] $ ./mvnw clean test -Dspring.batch.job.enabled=false
+   [~/exercises] $ ./mvnw clean test
    ```
 
    When we run the test, we see the results are interesting! We actually have _too many records_. Why is this?
@@ -98,7 +98,7 @@ Now that the job has a second step that inserts data into the `BILLING_DATA` tab
    ```
 
    ```shell
-   [~/exercises] $ ./mvnw clean test -Dspring.batch.job.enabled=false
+   [~/exercises] $ ./mvnw clean test
    ...
    [INFO] Results:
    [INFO]

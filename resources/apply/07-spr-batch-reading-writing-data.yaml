@@ -4,7 +4,7 @@ metadata:
   name: spr-batch-reading-writing-data
 spec:
   title: "Lab: Reading and Writing Data"
-  description: "reading and writing data"
+  description: "Reading and Writing Data"
   workshop:
     image: jdk17-environment:*
     packages:

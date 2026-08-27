@@ -36,7 +36,7 @@ The most commonly used `Step` types are the following:
 
 The following diagram explains the hierarchy and relation between these different types of `Steps`.
 
-![Steps and Tasklets](https://github.com/spring-academy/spring-academy-assets/blob/main/courses/course-spring-batch-essentials/step-and-tasklet.svg)
+![Steps and Tasklets](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/refs/heads/main/courses/course-spring-batch-essentials/step-and-tasklet.svg)
 
 In this course, we'll focus on the `TaskletStep` type.
 

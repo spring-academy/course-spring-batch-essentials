@@ -1,4 +1,4 @@
-name: Testing your Job
+name: First Step
 modules:
   activate:
     - 01-overview

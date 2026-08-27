@@ -9,11 +9,11 @@
     "manualCompletion": true,
     "links": [
       {
-        "text": "Item readers",
+        "text": "Item Readers",
         "url": "https://docs.spring.io/spring-batch/reference/appendix.html#itemReadersAppendix"
       },
       {
-        "text": "Item writers",
+        "text": "Item Writers",
         "url": "https://docs.spring.io/spring-batch/reference/appendix.html#itemWritersAppendix"
       }
     ]

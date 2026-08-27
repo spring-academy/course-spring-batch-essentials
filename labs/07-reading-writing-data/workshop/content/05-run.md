@@ -42,17 +42,20 @@ Now that second step is defined, let's add it to the sequence of steps in the jo
    You should see something like this:
 
    ```shell
-   2023-07-12T12:20:51.335+02:00  INFO 98965 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] launched with the following parameters: [{'input.file':'{value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}'}]
-   2023-07-12T12:20:51.364+02:00  INFO 98965 --- [           main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [filePreparation]
-   2023-07-12T12:20:51.387+02:00  INFO 98965 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [filePreparation] executed in 22ms
-   2023-07-12T12:20:51.407+02:00  INFO 98965 --- [           main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [fileIngestion]
-   2023-07-12T12:20:51.620+02:00  INFO 98965 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [fileIngestion] executed in 212ms
-   2023-07-12T12:20:51.634+02:00  INFO 98965 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{'input.file':'{value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}'}] and the following status: [COMPLETED] in 285ms
+   ...
+   2026-08-21T12:49:49.316Z  INFO 4539 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] launched with the following parameters: [{JobParameter{name='input.file', value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}}]
+   2026-08-21T12:49:49.372Z  INFO 4539 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [filePreparation]
+   2026-08-21T12:49:49.396Z  INFO 4539 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [filePreparation] executed in 32ms
+   2026-08-21T12:49:49.444Z  INFO 4539 --- [           main] o.s.batch.core.job.SimpleStepHandler     : Duplicate step [filePreparation] detected in execution of job=[BillingJob]. If either step fails, both will be executed again on restart.
+   2026-08-21T12:49:49.460Z  INFO 4539 --- [           main] o.s.batch.core.step.AbstractStep         : Executing step: [filePreparation]
+   2026-08-21T12:49:49.470Z  INFO 4539 --- [           main] o.s.batch.core.step.AbstractStep         : Step: [filePreparation] executed in 15ms
+   2026-08-21T12:49:49.504Z  INFO 4539 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{JobParameter{name='input.file', value=src/main/resources/billing-2026-01.csv, type=class java.lang.String, identifying=true}}] and the following status: [COMPLETED] in 167ms
+   ...
    ```
 
    This means the job was completed successfully. But, it's always good to verify the results are as expected.
 
-1. Verify the job succeeded.
+2. Verify the job succeeded.
 
    Let's check the content of the `BILLING_DATA` table. In the **Terminal**, run the following command:
 

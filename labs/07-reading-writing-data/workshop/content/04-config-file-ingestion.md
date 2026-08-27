@@ -14,11 +14,11 @@ Now that the item reader and writer have been configured, we can define the `fil
    public Step step2(
       JobRepository jobRepository, JdbcTransactionManager transactionManager,
       ItemReader<BillingData> billingDataFileReader, ItemWriter<BillingData> billingDataTableWriter) {
-   	return new StepBuilder("fileIngestion", jobRepository)
-   			.<BillingData, BillingData>chunk(100, transactionManager)
-   			.reader(billingDataFileReader)
-   			.writer(billingDataTableWriter)
-   			.build();
+       return new ChunkOrientedStepBuilder<BillingData, BillingData>("fileIngestion", jobRepository, 100)
+               .reader(billingDataFileReader)
+               .writer(billingDataTableWriter)
+               .transactionManager(transactionManager)
+               .build();
    }
    ```
 
@@ -31,13 +31,13 @@ Now that the item reader and writer have been configured, we can define the `fil
 
    In this snippet, we define a bean named `step2` of type `Step`, and it has a lot going on. Let's dive into the details next.
 
-1. Understand the file ingestion step definition.
+2. Understand the file ingestion step definition.
 
-   As we have seen previously, all step types require at least the job repository and the step name. In this case, the job repository is passed as a parameter to the bean definition method and the step name is `fileIngestion`.
+   As we have seen previously, all step types require at least the job repository and the step name. In this case, the job repository and the step name (`fileIngestion`) are both passed directly to the `ChunkOrientedStepBuilder` constructor, along with the chunk size, which is 100 in this case.
 
-   Now since we are creating a chunk-oriented step, which is a `TaskletStep`, we need also to pass a reference to a transaction manager and to specify the chunk size, which is 100 in this case. This is done by calling the `.chunk(...)` method.
+   Since we are creating a chunk-oriented step -- backed by Spring Batch's `ChunkOrientedStep` implementation -- we also need to provide a transaction manager. Unlike the job repository, step name, and chunk size, which are constructor arguments, the transaction manager is set separately using the `.transactionManager(...)` method.
 
-   The syntax `<BillingData,BillingData>chunk(...)` is used to tell Spring Batch that the input and output of the step are of type `BillingData`, meaning that the reader will return items of type `BillingData` and that the writer will write items of type `BillingData` as well.
+   The generic type parameters on `ChunkOrientedStepBuilder<BillingData, BillingData>` are used to tell Spring Batch that the input and output of the step are of type `BillingData`, meaning that the reader will return items of type `BillingData` and that the writer will write items of type `BillingData` as well.
 
    In other words, this step does not change the type of items during its execution. It is possible to change the item type if data should be transformed during the processing. We will cover this in the next lesson.
 
