@@ -1,4 +1,4 @@
-name: Testing your Job
+name: Testing Your Job
 modules:
   activate:
     - 01-overview

@@ -8,7 +8,7 @@ A `JobInstance` is a unique parametrization of a `Job` definition. For example, 
 
 A `JobInstance` is distinct from other `JobInstance`s by a specific parameter, or a set of parameters. For example, a parameter named `schedule.date` would specify a specific day. Such a parameter is called a `JobParameter`. `JobParameter`s are what distinguish one `JobInstance` from another. The following diagram shows how `JobParameter`s define `JobInstance`s:
 
-![Job Parameters](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/job-parameters.svg)
+![Job Parameters](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/job-parameters-6.svg)
 
 ## What Do Job Instances and Job Parameters Represent?
 
@@ -31,11 +31,11 @@ A `JobExecution` refers to the technical concept of a single _attempt_ to run a 
 
 The relation between the concepts of `Job`, `JobInstance`, `JobParameters`, and `JobExecution` is summarized in the following diagram:
 
-![Relationships between various Job classes](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/job-class-relations.svg)
+![Relationships between various Job classes](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/job-class-relations-6.svg)
 
 Here's a concrete example of the lifecycle of a `JobInstance` in the case of the `EndOfDay` `Job`:
 
-![Example of Job Instance lifecycle using the end-of-day scenario](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/lifecycle-example.svg)
+![Example of Job Instance lifecycle using the end-of-day scenario](https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-batch-essentials/lifecycle-example-6.svg)
 
 In this example, the first execution attempt of `Job Instance 1` fails, so another execution is run and succeeds. This leads to two `JobExecution`s for the same `JobInstance`. For `Job Instance 2` however, the first execution attempt succeeds, therefore there is no need to launch a second execution.
 
