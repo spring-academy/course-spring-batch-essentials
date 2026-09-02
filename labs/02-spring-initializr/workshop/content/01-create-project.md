@@ -45,6 +45,10 @@ Complete the following steps to use Spring Initializr to set up the Spring Cellu
    >
    > This course relies on a persistent `JobRepository` to demonstrate restartability, skipping invalid records, and retrying transient errors in later modules, so we need the database-backed job repository that `Spring Batch JDBC` provides.
 
+   It should now look like the following:
+
+   ![](images/initializr-populated.png)
+
 5. Click the `CREATE` button. Spring Initializr generates a zip file of code and unzips it in your home directory.
 
    At this point, you should have the following structure in the `~/exercises/billing-job` directory:
