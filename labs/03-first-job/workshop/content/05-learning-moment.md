@@ -44,4 +44,4 @@ name: Terminal
 (1 row)
 ```
 
-**Note:** be sure to revert the `execute` method back to the successful implementation before continuing.
+**Note:** Be sure to revert the `execute` method back to the successful implementation before continuing.

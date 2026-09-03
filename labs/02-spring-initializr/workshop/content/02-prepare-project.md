@@ -45,8 +45,8 @@ This class is a placeholder for Spring Batch related beans (Jobs, Steps, etc) an
 
    ```shell
    [~/exercises] $ docker ps
-   CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                      NAMES
-   c711e7873371   postgres:14.1-alpine   "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes   127.0.0.1:5432->5432/tcp   postgres
+   CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS         PORTS                      NAMES
+   209bc222bba4   postgres:18.6-alpine   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   127.0.0.1:5432->5432/tcp   postgres
    [~/exercises] $
    ```
 
@@ -54,8 +54,9 @@ This class is a placeholder for Spring Batch related beans (Jobs, Steps, etc) an
 
    ```shell
    [~/exercises] $ docker exec -it postgres psql -U postgres
-   psql (14.1)
+   psql (18.6)
    Type "help" for help.
+
    postgres=#
    ```
 
@@ -154,6 +155,7 @@ This class is a placeholder for Spring Batch related beans (Jobs, Steps, etc) an
     public | batch_step_execution_context | table    | postgres
     public | batch_step_execution_seq     | sequence | postgres
    (9 rows)
+   
    postgres=#
    ```
 

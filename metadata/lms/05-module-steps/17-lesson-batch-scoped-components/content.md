@@ -7,7 +7,7 @@ There's still an issue though: The path to the input file is hard-coded in the b
 public FlatFileItemReader<BillingData> billingDataFileReader() {
    return new FlatFileItemReaderBuilder<BillingData>()
 	.name("billingDataFileReader")
-	.resource(new FileSystemResource("staging/billing-2023-01.csv")) //hardcoded value
+	.resource(new FileSystemResource("staging/billing-2026-01.csv")) //hardcoded value
 	.delimited()
 	.names("dataYear", "dataMonth", "accountId", "phoneNumber", "dataUsage", "callDuration", "smsCount")
 	.targetType(BillingData.class)
@@ -15,7 +15,7 @@ public FlatFileItemReader<BillingData> billingDataFileReader() {
 }
 ```
 
-What if we decide to ingest another file – say, `billing-2023-02.csv`? As currently defined, the same file (`billing-2023-01.csv`) will always be used, no matter which input file we pass as a job parameter. Since the input file is passed to the job as a parameter _at runtime_, there's no way to know its value at _configuration time_.
+What if we decide to ingest another file – say, `billing-2026-02.csv`? As currently defined, the same file (`billing-2026-01.csv`) will always be used, no matter which input file we pass as a job parameter. Since the input file is passed to the job as a parameter _at runtime_, there's no way to know its value at _configuration time_.
 
 This is a common situation faced by many developers of batch applications: how to configure the item reader _lazily at runtime_ until the value of the job parameter is resolved?
 

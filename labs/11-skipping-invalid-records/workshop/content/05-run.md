@@ -15,26 +15,26 @@ Let's see if our fault-tolerant job is truly fault-tolerant!
    Then, run the job to process `billing-report-2026-03.csv`:
 
    ```shell
-   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2026-03.csv output.file=staging/billing-report-2026-03.csv skip.file=staging/billing-data-skip-2026-03.psv data.year=2026 data.month=3
+   [~/exercises] $ java -jar target/billing-job-0.0.1-SNAPSHOT.jar input.file=input/billing-2026-03.csv output.file=staging/billing-report-2026-03.csv skip.file=staging/billing-data-skip-2026-03.csv data.year=2026 data.month=3
    ```
 
-   **Note** the new parameter `skip.file=staging/billing-data-skip-2026-03.psv` that corresponds to the skipped items file.
+   **Note** the new parameter `skip.file=staging/billing-data-skip-2026-03.csv` that corresponds to the skipped items file.
 
-   The job should succeed and a new file named `billing-data-skip-2026-03.psv` should be generated in the `staging` directory.
+   The job should succeed and a new file named `billing-data-skip-2026-03.csv` should be generated in the `staging` directory.
 
    ```shell
    ...
-   2026-08-27T12:31:58.562Z  INFO 2797 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{JobParameter{name='data.year', value=2026, type=class java.lang.String, identifying=true},JobParameter{name='output.file', value=staging/billing-report-2026-03.csv, type=class java.lang.String, identifying=true},JobParameter{name='data.month', value=3, type=class java.lang.String, identifying=true},JobParameter{name='skip.file', value=staging/billing-data-skip-2026-03.psv, type=class java.lang.String, identifying=true},JobParameter{name='input.file', value=input/billing-2026-03.csv, type=class java.lang.String, identifying=true}}] and the following status: [COMPLETED] in 801ms
+   2026-08-27T12:31:58.562Z  INFO 2797 --- [           main] o.s.b.c.l.s.TaskExecutorJobLauncher      : Job: [SimpleJob: [name=BillingJob]] completed with the following parameters: [{JobParameter{name='data.year', value=2026, type=class java.lang.String, identifying=true},JobParameter{name='output.file', value=staging/billing-report-2026-03.csv, type=class java.lang.String, identifying=true},JobParameter{name='data.month', value=3, type=class java.lang.String, identifying=true},JobParameter{name='skip.file', value=staging/billing-data-skip-2026-03.csv, type=class java.lang.String, identifying=true},JobParameter{name='input.file', value=input/billing-2026-03.csv, type=class java.lang.String, identifying=true}}] and the following status: [COMPLETED] in 801ms
    ```
 
    Let's check it out!
 
 1. Inspect the skipped items.
 
-   In the `Editor`, open the `staging/billing-data-skip-2026-03.psv` and check its content. It should contain the following lines:
+   In the `Editor`, open the `staging/billing-data-skip-2026-03.csv` and check its content. It should contain the following lines:
 
    ```editor:open-file
-   file: ~/exercises/staging/billing-data-skip-2026-03.psv
+   file: ~/exercises/staging/billing-data-skip-2026-03.csv
    description: "Open billing-2026-03.csv"
    ```
 

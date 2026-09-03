@@ -25,7 +25,7 @@ Spring Boot looks for our `Job` in the application context and runs it by using 
 
     :: Spring Boot ::                (v4.1.0)
 
-   2026-08-18T10:49:15.668Z  INFO 1841 --- [           main] e.billingjob.BillingJobApplication       : Starting BillingJobApplication using Java 17.0.16 with PID 1841 (/home/eduk8s/exercises/target/classes started by eduk8s in /home/eduk8s/exercises)
+   2026-08-18T10:49:15.668Z  INFO 1841 --- [           main] e.billingjob.BillingJobApplication       : Starting BillingJobApplication using Java 21.0.8 with PID 1841 (/home/eduk8s/exercises/target/classes started by eduk8s in /home/eduk8s/exercises)
    2026-08-18T10:49:15.676Z  INFO 1841 --- [           main] e.billingjob.BillingJobApplication       : No active profile set, falling back to 1 default profile: "default"
    2026-08-18T10:49:17.705Z  INFO 1841 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
    2026-08-18T10:49:18.268Z  INFO 1841 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f651f93
