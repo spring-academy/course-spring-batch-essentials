@@ -25,6 +25,8 @@ This is where Spring Batch custom scopes come into play, and this is what you'll
 
 Spring Batch provides two custom Spring bean scopes: job scope and step scope. Batch-scoped beans are not created at application startup like singleton beans. Rather, they are created at runtime when the job or step is executed. A job-scoped bean will only be instantiated when the job is started. Similarly, a step-scoped bean won't be instantiated until the step is started. Since this type of bean is lazily instantiated at runtime, any runtime job parameter or execution context attribute can be resolved.
 
+A bean isn't batch-scoped by default: annotating it with `@StepScope` (or `@JobScope`) is the action that turns it into a batch-scoped bean in the first place, causing Spring to defer its instantiation to step (or job) start instead of creating it eagerly like a regular singleton bean.
+
 Configuring batch-scoped components requires a powerful Spring technology that we haven't introduced yet: the Spring Expression Language, or SpEL. Let's learn about it now.
 
 ## Spring Expression Language (SpEL)

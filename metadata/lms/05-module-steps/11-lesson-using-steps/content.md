@@ -29,7 +29,7 @@ In the previous example, we pass steps as parameters to the `myJob` bean definit
 
 ## How To Create Steps?
 
-Similar to the `JobBuilder` API, Spring Batch provides the `StepBuilder` API to let you create different types of steps. All step types share some common properties (like the step name, the job repository to report metadata to, and others), but each step type has its own specific properties. For this reason, Spring Batch provides a specific builder for each step type (`TaskletStepBuilder`, `PartitionedStepBuilder`, and others).
+Similar to the `JobBuilder` API, Spring Batch provides the `StepBuilder` API to let you create different types of steps. All step types share some common properties (like the step name, the job repository to report metadata to, and others), but each step type has its own specific properties. For this reason, Spring Batch provides a specific builder for each step type (`TaskletStepBuilder`, `PartitionStepBuilder`, and others).
 
 You shouldn't worry about how to create those specific builders, as Spring Batch guides you to using the corresponding one depending on the type of step you are creating. The main entry point to create steps is the `StepBuilder` API. Here's an example that creates a `TaskletStep`:
 
@@ -50,14 +50,14 @@ The pattern is similar if, for instance, you want to create a partitioned step. 
 
 ```java
 @Bean
-public Step partitionedtStep(JobRepository jobRepository, Partitioner partitioner) {
+public Step partitionedStep(JobRepository jobRepository, Partitioner partitioner) {
   return new StepBuilder("step1", jobRepository)
     .partitioner("worker", partitioner)
     .build();
 }
 ```
 
-In the same way that we've created a `TaskletStep` in our lab, we'll use the main entry point (the `StepBuilder`) by passing the common properties to it in the constructor (that is, the step name and job repository), then call `StepBulider.partitioner` to further configure the partitioned step with its specific attributes (the `partitioner` in this case). The `Partitioner` is beyond the scope of this lesson and course. We'll use it here only as an example, to show the difference between step type specific attributes. Note that we didn't use the `PartitionedStepBuilder`, instead we used the `StepBuilder` directly.
+In the same way that we've created a `TaskletStep` in our lab, we'll use the main entry point (the `StepBuilder`) by passing the common properties to it in the constructor (that is, the step name and job repository), then call `StepBuilder.partitioner` to further configure the partitioned step with its specific attributes (the `partitioner` in this case). The `Partitioner` is beyond the scope of this lesson and course. We'll use it here only as an example, to show the difference between step type specific attributes. Note that we didn't use the `PartitionStepBuilder`, instead we used the `StepBuilder` directly.
 
 ## Understanding Step Metadata
 
