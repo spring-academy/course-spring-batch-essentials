@@ -6,7 +6,7 @@ spec:
   title: "Lab: Creating Job Instances"
   description: "This Lab shows how to use Job parameters to create Job instances and explains the lifecycle of a Job instance"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

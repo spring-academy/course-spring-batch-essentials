@@ -6,7 +6,7 @@ spec:
   title: "Lab: Implement Your First Job"
   description: "This Lab creates the batch job of the Spring Cellular billing module"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

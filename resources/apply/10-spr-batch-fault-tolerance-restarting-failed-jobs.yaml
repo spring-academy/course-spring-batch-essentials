@@ -6,7 +6,7 @@ spec:
   title: "Lab: Restarting failed jobs"
   description: "Restarting failed jobs"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

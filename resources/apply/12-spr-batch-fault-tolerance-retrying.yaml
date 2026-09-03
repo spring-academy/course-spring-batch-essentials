@@ -6,7 +6,7 @@ spec:
   title: "Lab: Retrying Processing Errors"
   description: "Retrying Processing Errors"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

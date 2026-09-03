@@ -6,7 +6,7 @@ spec:
   title: "Lab: Testing your Job"
   description: "This Lab shows how to properly test your Job using the Spring Batch test APIs."
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

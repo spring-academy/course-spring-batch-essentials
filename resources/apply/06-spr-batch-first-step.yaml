@@ -6,7 +6,7 @@ spec:
   title: "Lab: First Step"
   description: "first step"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

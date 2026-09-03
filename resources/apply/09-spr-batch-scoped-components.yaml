@@ -6,7 +6,7 @@ spec:
   title: "Lab: Batch scoped components"
   description: "Batch scoped components"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

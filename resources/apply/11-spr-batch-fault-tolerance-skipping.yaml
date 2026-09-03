@@ -6,7 +6,7 @@ spec:
   title: "Lab: Skipping invalid records"
   description: "Skipping invalid records"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

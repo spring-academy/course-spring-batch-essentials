@@ -6,7 +6,7 @@ spec:
   title: "Lab: Bootstrap the project"
   description: "This Lab bootstraps a Spring Batch project based on Spring Boot"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

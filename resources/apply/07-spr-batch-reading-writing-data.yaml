@@ -6,7 +6,7 @@ spec:
   title: "Lab: Reading and Writing Data"
   description: "Reading and Writing Data"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:

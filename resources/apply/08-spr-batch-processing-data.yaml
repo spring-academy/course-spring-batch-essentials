@@ -6,7 +6,7 @@ spec:
   title: "Lab: Processing Data"
   description: "processing data"
   workshop:
-    image: jdk17-environment:*
+    image: jdk21-environment:*
     packages:
       - name: spring-academy-lab
         files:
