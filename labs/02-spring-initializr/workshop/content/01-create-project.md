@@ -26,7 +26,7 @@ Complete the following steps to use Spring Initializr to set up the Spring Cellu
    - Description: `Billing job for Spring Cellular`
    - Package name: `example.billingjob`
    - Packaging: `Jar`
-   - Java: `17`
+   - Java: `21`
 
 4. Select the `ADD DEPENDENCIES...` button from the `Dependencies` panel and add the following dependencies:
 
