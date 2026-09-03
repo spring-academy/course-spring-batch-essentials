@@ -1,0 +1,10 @@
+DIR_LAB               = lab
+NAME                  = course-spring-batch-essentials
+IMAGE_SOURCE          = https://github.com/spring-academy/course-spring-batch-essentials
+CONTAINER_REGISTRY    = ghcr.io/spring-academy/
+CONTAINER_REPOSITORY  = course-spring-batch-essentials
+CODE_REPO             = https://github.com/spring-academy/course-spring-batch-essentials-code.git
+CODE_REPO_BRANCH      = spring-boot-4
+version               = latest
+
+env                   = local

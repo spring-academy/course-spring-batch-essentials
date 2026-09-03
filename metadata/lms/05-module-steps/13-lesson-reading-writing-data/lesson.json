@@ -1,0 +1,21 @@
+{
+  "id": "spring-batch-essentials-steps-reading-writing-data",
+  "slug": "spring-batch-steps-reading-writing-data",
+  "title": "Reading and Writing Data",
+  "status": "live",
+  "type": "article",
+  "duration": 720,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Item Readers",
+        "url": "https://docs.spring.io/spring-batch/reference/appendix.html#itemReadersAppendix"
+      },
+      {
+        "text": "Item Writers",
+        "url": "https://docs.spring.io/spring-batch/reference/appendix.html#itemWritersAppendix"
+      }
+    ]
+  }
+}

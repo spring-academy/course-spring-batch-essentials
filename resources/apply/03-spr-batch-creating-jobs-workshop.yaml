@@ -1,0 +1,144 @@
+apiVersion: training.educates.dev/v1beta1
+kind: Workshop
+metadata:
+  name: spr-batch-creating-jobs-workshop
+spec:
+  title: "Lab: Implement Your First Job"
+  description: "This Lab creates the batch job of the Spring Cellular billing module"
+  workshop:
+    image: jdk21-environment:*
+    packages:
+      - name: spring-academy-lab
+        files:
+          - image:
+              url: ghcr.io/spring-academy/spring-academy-extension-packages/spring-academy-lab
+              tagSelection:
+                semver:
+                  constraints: ">=1.0.0 <2.0.0"
+    files:
+      - http:
+          # the name of the tar.gz here should make the workshop name
+          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/$(workshop_name).tar.gz"
+      - path: .local/share/code-server
+        image:
+          url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.31.1
+  request:
+    parameters:
+    - name: USER_DOMAIN
+      value: "unknown.domain"
+    - name: USER_EMAIL
+      value: "somebody@unknown.domain"
+  session:
+    env:
+      - name: WEBSERVER
+        value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
+      - name: LESSON_LABEL
+        value: first-job-start
+    namespaces:
+      budget: medium
+    resources:
+      memory: 2Gi
+    applications:
+      terminal:
+        enabled: true
+        layout: default
+      editor:
+        enabled: true
+      docker:
+        enabled: true
+        storage: 500Mi
+        socket:
+          # you must have this to enable docker ps, etc.
+          enabled: true
+        compose:
+          services:
+            postgres-workshop:
+              image: postgres:18.6-alpine
+              container_name: postgres
+              ports:
+                - "127.0.0.1:5432:5432"
+              environment:
+                - POSTGRES_USER=postgres
+                - POSTGRES_PASSWORD=postgres
+              volumes:
+                - type: volume
+                  source: workshop
+                  target: /mnt
+    dashboards:
+      - name: Editor
+      - name: Terminal
+    volumes:
+      - name: workshop-setup-scripts
+        secret:
+          secretName: workshop-setup-scripts
+          defaultMode: 0755
+    volumeMounts:
+      - name: workshop-setup-scripts
+        mountPath: /opt/packages/00-workshop-setup-scripts/setup.d
+  environment:
+      objects:
+      - apiVersion: v1
+        kind: Secret
+        metadata:
+          name: workshop-setup-scripts
+        stringData:
+          00-setup.sh: |
+            #!/bin/bash
+            # This is run at session creation
+            curl -L ${WEBSERVER}/exercises.tar.gz | tar -xvz -C ${HOME}
+      - apiVersion: v1
+        kind: Service
+        metadata:
+          name: $(workshop_namespace)-files
+          namespace: $(workshop_namespace)
+        spec:
+          type: ClusterIP
+          ports:
+          - port: 80
+            protocol: TCP
+            targetPort: 8080
+          selector:
+            deployment: files
+      - apiVersion: networking.k8s.io/v1
+        kind: Ingress
+        metadata:
+          name: $(workshop_namespace)-files
+          namespace: $(workshop_namespace)
+        spec:
+          tls:
+          - hosts:
+              - $(workshop_namespace)-files.$(ingress_domain)
+            secretName: $(ingress_secret)
+          rules:
+          - host: $(workshop_namespace)-files.$(ingress_domain)
+            http:
+              paths:
+              - backend:
+                  service:
+                    name: $(workshop_namespace)-files
+                    port:
+                      number: 80
+                pathType: Prefix
+                path: /
+      - apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: $(workshop_namespace)-files
+          namespace: $(workshop_namespace)
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              deployment: files
+          strategy:
+            type: Recreate
+          template:
+            metadata:
+              labels:
+                deployment: files
+            spec:
+              serviceAccountName: $(service_account)
+              containers:
+              - name: files
+                image: ${CONTAINER_REGISTRY}${CONTAINER_REPOSITORY}:${VERSION}
+
