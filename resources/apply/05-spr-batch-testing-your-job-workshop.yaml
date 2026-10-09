@@ -24,6 +24,8 @@ spec:
     env:
       - name: WEBSERVER
         value: "$(ingress_protocol)://$(assets_repository)"
+      - name: LAB_VERSION
+        value: "${VERSION}"
       - name: LESSON_LABEL
         value: testing-your-job-start
     namespaces:
